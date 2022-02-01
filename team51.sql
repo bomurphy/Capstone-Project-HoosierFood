@@ -6,8 +6,7 @@ CREATE TABLE users(
 	City VARCHAR(50) NOT NULL,
 	State CHAR(2) NOT NULL,
 	Zip CHAR(10) NOT NULL,
-	Email VARCHAR(50) NOT NULL UNIQUE,
-	Password VARCHAR(255) NOT NULL
+	Email VARCHAR(50) NOT NULL UNIQUE
 	) ENGINE=INNODB;
 
 CREATE TABLE orders(
@@ -29,11 +28,11 @@ CREATE TABLE restaurants(
 
 CREATE TABLE favorites(
     userID INT NOT NULL,
-    UserName VARCHAR (100) NOT NULL,
-    Password VARCHAR (225) NOT NUll,
+    restaurantID INT NOT NULL,
     UserLocation VARCHAR (225) NOT NUll,
-    Radius INT NOT NULL,
-    FOREIGN KEY (userID) REFERENCES users(userID)
+    distance VARCHAR(50) NOT NULL,
+    FOREIGN KEY (userID) REFERENCES users(userID),
+    FOREIGN KEY (resturantID) REFERENCES restaurants(restaurantID)
     ) ENGINE=INNODB;
 
 CREATE TABLE location(
@@ -42,29 +41,28 @@ CREATE TABLE location(
     FirstName VARCHAR (50) NOT NUll,
     PictureURL VARCHAR (225),
     PhoneNumber VARCHAR (10) NOT NULL,
-    Biography VARCHAR (225) NOT NULL,
-    FOREIGN KEY (userID) REFERENCES users(userID)
+    FOREIGN KEY (userID) REFERENCES users(userID),
     ) ENGINE=INNODB;
 
 CREATE TABLE filter(
-    resturantID INT NOT NULL,
-    ResturantName VARCHAR (100) NOT NULL,
+    restaurantID INT NOT NULL,
+    RestaurantName VARCHAR (100) NOT NULL,
     PictureURL VARCHAR (225),
-    PhoneNumber VARCHAR (10) NOT NULL,
-    FOREIGN KEY (resturantID) REFERENCES restaurants(restaurantID)
+    PhoneNum VARCHAR (10) NOT NULL,
+    FOREIGN KEY (restaurantID) REFERENCES restaurants(restaurantID)
     ) ENGINE=INNODB;
 
 
-insert into users (userID, FirstName, LastName, Street, City, State, Zip, Email, Password) values (1, 'Bob', 'Jones', '1534 American Street', 'Bloomington', 'IN', '47401', 'bob@iu.edu', 'bob1');
-insert into users (userID, FirstName, LastName, Street, City, State, Zip, Email, Password) values (2, 'Minnie', 'Oliver', '1772 Howard Drive', 'Bloomington', 'IN', '47404', 'minnie@gmail.com', 'minnie1');
-insert into users (userID, FirstName, LastName, Street, City, State, Zip, Email, Password) values (3, 'Phil', 'Scott', '635 Cardinal Circle', 'Bloomington', 'IN', '47401', 'phil@iu.edu', 'phil1');
-insert into users (userID, FirstName, LastName, Street, City, State, Zip, Email, Password) values (4, 'Alexia', 'Ham', '721 Jay Street', 'Bloomington', 'IN', '47401', 'alexia@iu.edu', 'alexia1');
-insert into users (userID, FirstName, LastName, Street, City, State, Zip, Email, Password) values (5, 'Cassie', 'Bill', '836 Hudson Drive', 'Bloomington', 'IN', '47401', 'cassie@gmail.com', 'cassie1');
-insert into users (userID, FirstName, LastName, Street, City, State, Zip, Email, Password) values (6, 'Dory', 'Wells', '801 Brick Park', 'Bloomington', 'IN', '47401', 'dory@iu.edu', 'dory1');
-insert into users (userID, FirstName, LastName, Street, City, State, Zip, Email, Password) values (7, 'Lauren', 'Bush', '573 Longview Street', 'Bloomington', 'IN', '47401', 'lauren@iu.edu', 'lauren1');
-insert into users (userID, FirstName, LastName, Street, City, State, Zip, Email, Password) values (8, 'Cory', 'Potter', '891 Stella Ridge', 'Bloomington', 'IN', '47404', 'cory@gmail.com', 'cory1');
-insert into users (userID, FirstName, LastName, Street, City, State, Zip, Email, Password) values (9, 'Gina', 'Pardi', '378 Indiana Circle', 'Bloomington', 'IN', '47404', 'gina@gmail.com', 'gina1');
-insert into users (userID, FirstName, LastName, Street, City, State, Zip, Email, Password) values (10, 'Kate', 'Houser', '3725 Bluejay Road', 'Bloomington', 'IN', '47401', 'kate@gmail.com', 'kate1');
+insert into users (userID, FirstName, LastName, Street, City, State, Zip, Email) values (1, 'Bob', 'Jones', '1534 American Street', 'Bloomington', 'IN', '47401', 'bob@iu.edu');
+insert into users (userID, FirstName, LastName, Street, City, State, Zip, Email) values (2, 'Minnie', 'Oliver', '1772 Howard Drive', 'Bloomington', 'IN', '47404', 'minnie@gmail.com');
+insert into users (userID, FirstName, LastName, Street, City, State, Zip, Email) values (3, 'Phil', 'Scott', '635 Cardinal Circle', 'Bloomington', 'IN', '47401', 'phil@iu.edu');
+insert into users (userID, FirstName, LastName, Street, City, State, Zip, Email) values (4, 'Alexia', 'Ham', '721 Jay Street', 'Bloomington', 'IN', '47401', 'alexia@iu.edu');
+insert into users (userID, FirstName, LastName, Street, City, State, Zip, Email) values (5, 'Cassie', 'Bill', '836 Hudson Drive', 'Bloomington', 'IN', '47401', 'cassie@gmail.com');
+insert into users (userID, FirstName, LastName, Street, City, State, Zip, Email) values (6, 'Dory', 'Wells', '801 Brick Park', 'Bloomington', 'IN', '47401', 'dory@iu.edu');
+insert into users (userID, FirstName, LastName, Street, City, State, Zip, Email) values (7, 'Lauren', 'Bush', '573 Longview Street', 'Bloomington', 'IN', '47401', 'lauren@iu.edu');
+insert into users (userID, FirstName, LastName, Street, City, State, Zip, Email) values (8, 'Cory', 'Potter', '891 Stella Ridge', 'Bloomington', 'IN', '47404', 'cory@gmail.com');
+insert into users (userID, FirstName, LastName, Street, City, State, Zip, Email) values (9, 'Gina', 'Pardi', '378 Indiana Circle', 'Bloomington', 'IN', '47404', 'gina@gmail.com');
+insert into users (userID, FirstName, LastName, Street, City, State, Zip, Email) values (10, 'Kate', 'Houser', '3725 Bluejay Road', 'Bloomington', 'IN', '47401', 'kate@gmail.com');
 
 insert into orders (orderID, orderNum, userID) values (1, 1, 3);
 insert into orders (orderID, orderNum, userID) values (2, 6, 7);
@@ -87,3 +85,25 @@ insert into restaurants(restaurantID, RestaurantName, Street, City, State, Zip, 
 insert into restaurants(restaurantID, RestaurantName, Street, City, State, Zip, PhoneNum) values (8, 'The Tap', '101 N College Ave', 'Bloomington', 'IN', '47404', '812-278-8579');
 insert into restaurants(restaurantID, RestaurantName, Street, City, State, Zip, PhoneNum) values (9, 'SmokeWorks', '121 N College Ave', 'Bloomington', 'IN', '47404', '812-287-8190');
 insert into restaurants(restaurantID, RestaurantName, Street, City, State, Zip, PhoneNum) values (10, 'Chick-fil-a', '3020 E 3rd St College Mall pad', 'Bloomington', 'IN', '47401', '812-330-5590');
+
+insert into favorites (userID, restaurantID, userLocation, distance) values (3, 1, '635 Cardinal Circle, Bloomington, IN 47401', '4 mi');
+insert into favorites (userID, restaurantID, userLocation, distance) values (7, 6, '573 Longview Street, Bloomington, IN 47401', '3.7 mi');
+insert into favorites (userID, restaurantID, userLocation, distance) values (5, 4, '836 Hudson Drive, Bloomington, IN 47401', '2.2 mi');
+insert into favorites (userID, restaurantID, userLocation, distance) values (9, 8, '378 Indiana Circle, Bloomington, IN 47401', '1.4 mi');
+insert into favorites (userID, restaurantID, userLocation, distance) values (3, 10, '635 Cardinal Circle, Bloomington, IN 47401', '2.5 mi');
+insert into favorites (userID, restaurantID, userLocation, distance) values (10, 5, '3725 Bluejay Road, Bloomington, IN 47401', '1.7 mi');
+insert into favorites (userID, restaurantID, userLocation, distance) values (4, 2, '721 Jay Street, Bloomington, IN 47401', '3.9 mi');
+insert into favorites (userID, restaurantID, userLocation, distance) values (6, 7, '801 Brick Park, Bloomington, IN 47401', '5.1 mi');
+insert into favorites (userID, restaurantID, userLocation, distance) values (1, 5, '1534 American Street, Bloomington, IN 47401', '3.3 mi');
+insert into favorites (userID, restaurantID, userLocation, distance) values (2, 6, '1772 Howard Drive, Bloomington, IN 47401', '4.3 mi');
+
+insert into filter (restaurantID, RestaurantName, PictureURL, PhoneNum) values (1, 'Buccetos Pizza Pasta', 'https://images.app.goo.gl/n3xpgWgJ1TowJm3AA', '812-331-1234');
+insert into filter (restaurantID, RestaurantName, PictureURL, PhoneNum) values (2, 'Pizza X East', 'https://images.app.goo.gl/mJ8K7G6aTQi6RqTWA', '812-355-5000');
+insert into filter (restaurantID, RestaurantName, PictureURL, PhoneNum) values (3, 'Buffa Louies', 'https://images.app.goo.gl/gWnJadxbpT1Nqnmt8', '812-333-3030');
+insert into filter (restaurantID, RestaurantName, PictureURL, PhoneNum) values (4, 'Subway', 'https://images.app.goo.gl/uDG7kMCfrKHkppA99', '812-336-7827');
+insert into filter (restaurantID, RestaurantName, PictureURL, PhoneNum) values (5, 'Mcdonalds', 'https://images.app.goo.gl/WhqgyMiyPyqVTxnx6', '812-332-7184');
+insert into filter (restaurantID, RestaurantName, PictureURL, PhoneNum) values (6, 'Malibu Grill', 'https://images.app.goo.gl/aczhZzzkFeHoTvzq5', '812-332-4334');
+insert into filter (restaurantID, RestaurantName, PictureURL, PhoneNum) values (7, 'Social Cantina', 'https://images.app.goo.gl/uwpW42E6wg2hUa8R6', '812-287-8199');
+insert into filter (restaurantID, RestaurantName, PictureURL, PhoneNum) values (8, 'The Tap', 'https://images.app.goo.gl/YnGMWFfgcMYrUAqY9', '812-278-8579');
+insert into filter (restaurantID, RestaurantName, PictureURL, PhoneNum) values (9, 'SmokeWorks', 'https://images.app.goo.gl/t4yZfALQFGpBKtuG9', '812-287-8190');
+insert into filter (restaurantID, RestaurantName, PictureURL, PhoneNum) values (10, 'Chick-fil-a', 'https://images.app.goo.gl/C4pnzWjX82jGymBdA', '812-330-5590');
