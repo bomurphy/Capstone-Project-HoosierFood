@@ -52,6 +52,14 @@ CREATE TABLE filter(
     FOREIGN KEY (restaurantID) REFERENCES restaurants(restaurantID)
     ) ENGINE=INNODB;
 
+CREATE TABLE admins(
+	adminID INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+	FirstName VARCHAR(50) NOT NULL,
+	LastName VARCHAR(100) NOT NULL,
+	PhoneNum VARCHAR(10) NOT NULL,
+	Email VARCHAR(50) NOT NULL UNIQUE
+	) ENGINE=INNODB;
+
 
 insert into users (userID, FirstName, LastName, Street, City, State, Zip, Email) values (1, 'Bob', 'Jones', '1534 American Street', 'Bloomington', 'IN', '47401', 'bob@iu.edu');
 insert into users (userID, FirstName, LastName, Street, City, State, Zip, Email) values (2, 'Minnie', 'Oliver', '1772 Howard Drive', 'Bloomington', 'IN', '47404', 'minnie@gmail.com');
