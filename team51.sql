@@ -115,3 +115,8 @@ insert into filter (restaurantID, RestaurantName, PictureURL, PhoneNum) values (
 insert into filter (restaurantID, RestaurantName, PictureURL, PhoneNum) values (8, 'The Tap', 'https://images.app.goo.gl/YnGMWFfgcMYrUAqY9', '812-278-8579');
 insert into filter (restaurantID, RestaurantName, PictureURL, PhoneNum) values (9, 'SmokeWorks', 'https://images.app.goo.gl/t4yZfALQFGpBKtuG9', '812-287-8190');
 insert into filter (restaurantID, RestaurantName, PictureURL, PhoneNum) values (10, 'Chick-fil-a', 'https://images.app.goo.gl/C4pnzWjX82jGymBdA', '812-330-5590');
+
+insert into admins (FirstName, LastName, PhoneNum, Email) values ('Finn', 'McSweeney', '9177551050', 'fmcsween@iu.edu');
+insert into admins (FirstName, LastName, PhoneNum, Email) values ('Bowen', 'Murphy', '8123408030', 'bomurphyiu.edu');
+insert into admins (FirstName, LastName, PhoneNum, Email) values ('Luke', 'Faccenda', '5744009836', 'lfaccend@iu.edu');
+insert into admins (FirstName, LastName, PhoneNum, Email) values ('Jack', 'Rebman', '2245954983', 'jrebman@iu.edu');
