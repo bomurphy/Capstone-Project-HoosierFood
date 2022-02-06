@@ -12,20 +12,65 @@
     <title>Hoosier Food Login</title>
     
 </head>
-<body>
+<body class="nav-background">
     
-    <h2 class="alert alert-primary">Login Hoosier Food Using Google Login</h2>
-    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    <nav class="navbar navbar-expand-lg p-2 border-bottom nav-background">
+        <div class="container-fluid">
+          <img src="../photos/iu-logo.svg" class="iu-logo me-5" alt="">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active red-text" aria-current="page" href="#">Restaurants</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link red-text" href="#">Orders</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link red-text" href="#" tabindex="-1" aria-disabled="true">Reviews</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link red-text" href="#" tabindex="-1" aria-disabled="true">Support</a>
+              </li>
+            </ul>
+            <!-- <form class="d-flex">
+              <button class="btn btn-outline-danger me-1">Login</button>
+              <button class="btn btn-outline-danger" type="submit">Register</button>
+            </form> -->
+            <form action="" class="d-flex">
+                <button class="login me-2">Login</button>
+                <button class="login">Register</button>
+            </form>
+          </div>
+        </div>
+      </nav>
 
-    <div class="data">
-        <p>Name</p>
-        <p id="name"></p>
-        <p>Profile Picture</p>
-        <img id="image" class="rounded-circle" width="100" height="100" />
-        <p>Email</p>
-        <p id="email"></p>
-        <button type="button" class="btn btn-danger" onclick="signOut();">Sign Out</button>
-    </div>
+      <section class="d-flex align-items-center flex-column hero-section h-100">
+        <h2 class="mb-5 title-text red-text">Hoosier Food</h2>
+        <!-- sign in btn -->
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    
+        <div class="data">
+            <p>Name</p>
+            <p id="name"></p>
+            <p>Profile Picture</p>
+            <img id="image" class="rounded-circle" width="100" height="100" />
+            <p>Email</p>
+            <p id="email"></p>
+            <button type="button" class="btn btn-danger" onclick="signOut();">Sign Out</button>
+        </div>
+      </section>
+
+      <footer class="footer-bg d-flex align-items-center position-fixed bottom-0 justify-content-end w-100 p-2">
+        <div class="mt-3 d-flex">
+            <a href="" class="me-3 footer-link">Rewards</a>
+            <a href="" class="me-3 footer-link">Contact</a>
+        </div>
+     
+      </footer>
+
 
     
     <script src="login.js"></script>

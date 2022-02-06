@@ -1,11 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
 .data {
     display: none;
 }
 /*centering Google Login button in the center of the screen*/
-.g-signin2 {
+/* .g-signin2 {
     position: absolute;
     top: 50%;
     left: 50%;
     margin-top: -50px;
     margin-left: -50px;
+} */
+
+.nav-background {
+    background-color: beige;
+}
+
+.hero-section {
+    margin-top: 10rem;
+}
+
+.iu-logo {
+    height: 60px;
+    width: 50px;
+}
+
+.title-text {
+    font-size: 3rem;
+}
+
+.red-text {
+    color: #990000;
+}
+
+.footer-bg {
+    background-color: #990000;
+    height: 2rem;
+    color: white;
+}
+
+
+.login {
+    background-color: transparent;
+    border: solid #990000 2px;
+    padding: 5px;
+    text-align: center;
+    font-weight: bold;
+    color: #990000;
+    height: 40px;
+    width: 100px;
+}
+
+.login:hover {
+    background-color: #990000;
+    color: white;
+    transition-duration: 500ms;
+}
+
+.nav-link:hover {
+    color: black;
+}
+
+.footer-link {
+    color: beige;
+    text-decoration: none;
+    margin-bottom: 1rem;
+}
+
+.footer-link:hover {
+    color: black;
 }
