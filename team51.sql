@@ -1,3 +1,4 @@
+
 CREATE TABLE users(
 	userID INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
 	FirstName VARCHAR(50) NOT NULL,
@@ -32,7 +33,7 @@ CREATE TABLE favorites(
     UserLocation VARCHAR (225) NOT NUll,
     distance VARCHAR(50) NOT NULL,
     FOREIGN KEY (userID) REFERENCES users(userID),
-    FOREIGN KEY (resturantID) REFERENCES restaurants(restaurantID)
+    FOREIGN KEY (restaurantID) REFERENCES restaurants(restaurantID)
     ) ENGINE=INNODB;
 
 CREATE TABLE location(
@@ -48,7 +49,7 @@ CREATE TABLE filter(
     restaurantID INT NOT NULL,
     RestaurantName VARCHAR (100) NOT NULL,
     PictureURL VARCHAR (225),
-    PhoneNum VARCHAR (10) NOT NULL,
+    PhoneNum VARCHAR (15) NOT NULL,
     FOREIGN KEY (restaurantID) REFERENCES restaurants(restaurantID)
     ) ENGINE=INNODB;
 
@@ -105,16 +106,16 @@ insert into favorites (userID, restaurantID, userLocation, distance) values (6, 
 insert into favorites (userID, restaurantID, userLocation, distance) values (1, 5, '1534 American Street, Bloomington, IN 47401', '3.3 mi');
 insert into favorites (userID, restaurantID, userLocation, distance) values (2, 6, '1772 Howard Drive, Bloomington, IN 47401', '4.3 mi');
 
-insert into filter (restaurantID, RestaurantName, PictureURL, PhoneNum) values (1, 'Buccetos Pizza Pasta', 'https://images.app.goo.gl/n3xpgWgJ1TowJm3AA', '812-331-1234');
-insert into filter (restaurantID, RestaurantName, PictureURL, PhoneNum) values (2, 'Pizza X East', 'https://images.app.goo.gl/mJ8K7G6aTQi6RqTWA', '812-355-5000');
-insert into filter (restaurantID, RestaurantName, PictureURL, PhoneNum) values (3, 'Buffa Louies', 'https://images.app.goo.gl/gWnJadxbpT1Nqnmt8', '812-333-3030');
-insert into filter (restaurantID, RestaurantName, PictureURL, PhoneNum) values (4, 'Subway', 'https://images.app.goo.gl/uDG7kMCfrKHkppA99', '812-336-7827');
-insert into filter (restaurantID, RestaurantName, PictureURL, PhoneNum) values (5, 'Mcdonalds', 'https://images.app.goo.gl/WhqgyMiyPyqVTxnx6', '812-332-7184');
-insert into filter (restaurantID, RestaurantName, PictureURL, PhoneNum) values (6, 'Malibu Grill', 'https://images.app.goo.gl/aczhZzzkFeHoTvzq5', '812-332-4334');
-insert into filter (restaurantID, RestaurantName, PictureURL, PhoneNum) values (7, 'Social Cantina', 'https://images.app.goo.gl/uwpW42E6wg2hUa8R6', '812-287-8199');
-insert into filter (restaurantID, RestaurantName, PictureURL, PhoneNum) values (8, 'The Tap', 'https://images.app.goo.gl/YnGMWFfgcMYrUAqY9', '812-278-8579');
-insert into filter (restaurantID, RestaurantName, PictureURL, PhoneNum) values (9, 'SmokeWorks', 'https://images.app.goo.gl/t4yZfALQFGpBKtuG9', '812-287-8190');
-insert into filter (restaurantID, RestaurantName, PictureURL, PhoneNum) values (10, 'Chick-fil-a', 'https://images.app.goo.gl/C4pnzWjX82jGymBdA', '812-330-5590');
+insert into filter (restaurantID, RestaurantName, PictureURL, PhoneNum) values (1, 'Buccetos Pizza Pasta', 'https://images.app.goo.gl/n3xpgWgJ1TowJm3AA', '8123311234');
+insert into filter (restaurantID, RestaurantName, PictureURL, PhoneNum) values (2, 'Pizza X East', 'https://images.app.goo.gl/mJ8K7G6aTQi6RqTWA', '8123555000');
+insert into filter (restaurantID, RestaurantName, PictureURL, PhoneNum) values (3, 'Buffa Louies', 'https://images.app.goo.gl/gWnJadxbpT1Nqnmt8', '8123333030');
+insert into filter (restaurantID, RestaurantName, PictureURL, PhoneNum) values (4, 'Subway', 'https://images.app.goo.gl/uDG7kMCfrKHkppA99', '8123367827');
+insert into filter (restaurantID, RestaurantName, PictureURL, PhoneNum) values (5, 'Mcdonalds', 'https://images.app.goo.gl/WhqgyMiyPyqVTxnx6', '8123327184');
+insert into filter (restaurantID, RestaurantName, PictureURL, PhoneNum) values (6, 'Malibu Grill', 'https://images.app.goo.gl/aczhZzzkFeHoTvzq5', '8123324334');
+insert into filter (restaurantID, RestaurantName, PictureURL, PhoneNum) values (7, 'Social Cantina', 'https://images.app.goo.gl/uwpW42E6wg2hUa8R6', '8122878199');
+insert into filter (restaurantID, RestaurantName, PictureURL, PhoneNum) values (8, 'The Tap', 'https://images.app.goo.gl/YnGMWFfgcMYrUAqY9', '8122788579');
+insert into filter (restaurantID, RestaurantName, PictureURL, PhoneNum) values (9, 'SmokeWorks', 'https://images.app.goo.gl/t4yZfALQFGpBKtuG9', '8122878190');
+insert into filter (restaurantID, RestaurantName, PictureURL, PhoneNum) values (10, 'Chick-fil-a', 'https://images.app.goo.gl/C4pnzWjX82jGymBdA', '8123305590');
 
 insert into admins (FirstName, LastName, PhoneNum, Email) values ('Finn', 'McSweeney', '9177551050', 'fmcsween@iu.edu');
 insert into admins (FirstName, LastName, PhoneNum, Email) values ('Bowen', 'Murphy', '8123408030', 'bomurphyiu.edu');
