@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,8 +10,9 @@
         content="1027531663911-al3p7o7qrb5eqdpq6j3ea1mn63tvg5jc.apps.googleusercontent.com">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="login1.css" >
+    <link rel="stylesheet" href="restaurant.css" >
     <title>Hoosier Food Login</title>
+	
     
 </head>
 
@@ -50,7 +50,7 @@
 	<div class="choice">
 	
 	<h1> Select up to 3 choices</h1>
-		Pizza <input type = "checkbox" name = "checkbox1" >
+		Pizza   <input type = "checkbox" name = "checkbox1" >
 		Italian <input type = "checkbox" name = "checkbox2" >
 		Chinese <input type = "checkbox" name = "checkbox3" >
 		Japanese <input type = "checkbox" name = "checkbox4" >
@@ -98,9 +98,41 @@ slider.oninput = function() {
 	
 		<div class="float-child2">
 			<h2>You should dine at</h2>
-			</br>
-			</br>
-			<input type="submit" value="Generate a Restaurant">
+			<?php
+
+$con = mysqli_connect("db.soic.indiana.edu", "i494f21_team51", "my+sql=i494f21_team51", "i494f21_team51");
+
+if (!$con) {
+	die("Failed to connect: " .
+		mysqli_connect_error() );
+} else{
+	echo"";
+}
+
+$sql = "SELECT RestaurantName FROM restaurants
+		ORDER BY RAND()
+		LIMIT 1";
+$result = mysqli_query($con, $sql);
+
+if (mysqli_num_rows($result) > 0) {
+    // output data of each row
+    while($row = mysqli_fetch_assoc($result)) {
+        echo "" . $row["RestaurantName"];
+    }
+} else {
+    echo "0 results";
+}
+
+
+mysqli_close($con)
+
+?>
+</br>			
+			<form method="POST" action="restaurant.php">
+            <input type="submit" value = "Generate a Restaurant" class="button">
+            </form>
+
+
 		</div>
 	</div>
 
@@ -125,3 +157,5 @@ slider.oninput = function() {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>
 </html>
+
+
