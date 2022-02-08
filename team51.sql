@@ -32,7 +32,7 @@ CREATE TABLE favorites(
     UserLocation VARCHAR (225) NOT NUll,
     distance VARCHAR(50) NOT NULL,
     FOREIGN KEY (userID) REFERENCES users(userID),
-    FOREIGN KEY (resturantID) REFERENCES restaurants(restaurantID)
+    FOREIGN KEY (restaurantID) REFERENCES restaurants(restaurantID)
     ) ENGINE=INNODB;
 
 CREATE TABLE location(
@@ -41,7 +41,7 @@ CREATE TABLE location(
     FirstName VARCHAR (50) NOT NUll,
     PictureURL VARCHAR (225),
     PhoneNumber VARCHAR (10) NOT NULL,
-    FOREIGN KEY (userID) REFERENCES users(userID),
+    FOREIGN KEY (userID) REFERENCES users(userID)
     ) ENGINE=INNODB;
 
 CREATE TABLE filter(
