@@ -42,7 +42,7 @@ CREATE TABLE location(
     FirstName VARCHAR (50) NOT NUll,
     PictureURL VARCHAR (225),
     PhoneNumber VARCHAR (10) NOT NULL,
-    FOREIGN KEY (userID) REFERENCES users(userID),
+    FOREIGN KEY (userID) REFERENCES users(userID)
     ) ENGINE=INNODB;
 
 CREATE TABLE filter(
