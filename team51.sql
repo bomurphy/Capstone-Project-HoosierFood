@@ -61,6 +61,13 @@ CREATE TABLE admins(
 	Email VARCHAR(50) NOT NULL UNIQUE
 	) ENGINE=INNODB;
 
+CREATE TABLE menus(
+	restaurantID INT NOT NULL,
+    RestaurantName VARCHAR (100) NOT NULL,
+	menuURL VARCHAR (225),
+	FOREIGN KEY (restaurantID) REFERENCES restaurants(restaurantID)
+	) ENGINE=INNODB;
+
 
 insert into users (userID, FirstName, LastName, Street, City, State, Zip, Email) values (1, 'Bob', 'Jones', '1534 American Street', 'Bloomington', 'IN', '47401', 'bob@iu.edu');
 insert into users (userID, FirstName, LastName, Street, City, State, Zip, Email) values (2, 'Minnie', 'Oliver', '1772 Howard Drive', 'Bloomington', 'IN', '47404', 'minnie@gmail.com');
@@ -121,3 +128,14 @@ insert into admins (FirstName, LastName, PhoneNum, Email) values ('Finn', 'McSwe
 insert into admins (FirstName, LastName, PhoneNum, Email) values ('Bowen', 'Murphy', '8123408030', 'bomurphyiu.edu');
 insert into admins (FirstName, LastName, PhoneNum, Email) values ('Luke', 'Faccenda', '5744009836', 'lfaccend@iu.edu');
 insert into admins (FirstName, LastName, PhoneNum, Email) values ('Jack', 'Rebman', '2245954983', 'jrebman@iu.edu');
+
+insert into menus (restaurantID, RestaurantName, menuURL) values (1, 'Buccetos Pizza Pasta','https://buccetos.com/menus/main/');
+insert into menus (restaurantID, RestaurantName, menuURL) values (2, 'Pizza X East','https://www.pizzaxbloomington.com/our-menu');
+insert into menus (restaurantID, RestaurantName, menuURL) values (3, 'Buffa Louies','https://buffalouies.com/our-menu/');
+insert into menus (restaurantID, RestaurantName, menuURL) values (4, 'Subway','https://www.subway.com/en-US/MenuNutrition/Menu');
+insert into menus (restaurantID, RestaurantName, menuURL) values (5, 'Mcdonalds','https://www.mcdonalds.com/us/en-us/full-menu.html');
+insert into menus (restaurantID, RestaurantName, menuURL) values (6, 'Malibu Grill','https://www.malibugrill.net/');
+insert into menus (restaurantID, RestaurantName, menuURL) values (7, 'Social Cantina','https://thesocialcantina.com/food-menu-2/');
+insert into menus (restaurantID, RestaurantName, menuURL) values (8, 'The Tap','https://thetapbeerbar.com/menus/');
+insert into menus (restaurantID, RestaurantName, menuURL) values (9, 'SmokeWorks','https://thesmokeworks.com/food-menu-2/');
+insert into menus (restaurantID, RestaurantName, menuURL) values (10, 'Chick-fil-a','https://www.chick-fil-a.com/menu');
