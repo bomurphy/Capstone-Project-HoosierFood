@@ -68,6 +68,12 @@ CREATE TABLE menus(
 	FOREIGN KEY (restaurantID) REFERENCES restaurants(restaurantID)
 	) ENGINE=INNODB;
 
+CREATE TABLE foods(
+	foodID INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+	food VARCHAR(50) NOT NULL,
+	restaurantID INT NOT NULL,
+	FOREIGN KEY (restaurantID) REFERENCES restaurants(restaurantID)
+	) ENGINE=INNODB;
 
 insert into users (userID, FirstName, LastName, Street, City, State, Zip, Email) values (1, 'Bob', 'Jones', '1534 American Street', 'Bloomington', 'IN', '47401', 'bob@iu.edu');
 insert into users (userID, FirstName, LastName, Street, City, State, Zip, Email) values (2, 'Minnie', 'Oliver', '1772 Howard Drive', 'Bloomington', 'IN', '47404', 'minnie@gmail.com');
@@ -139,3 +145,13 @@ insert into menus (restaurantID, RestaurantName, menuURL) values (7, 'Social Can
 insert into menus (restaurantID, RestaurantName, menuURL) values (8, 'The Tap','https://thetapbeerbar.com/menus/');
 insert into menus (restaurantID, RestaurantName, menuURL) values (9, 'SmokeWorks','https://thesmokeworks.com/food-menu-2/');
 insert into menus (restaurantID, RestaurantName, menuURL) values (10, 'Chick-fil-a','https://www.chick-fil-a.com/menu');
+
+insert into foods (foodID, food, restaurantID) values (1, 'Tacos', 7);
+insert into foods (foodID, food, restaurantID) values (2, 'Chicken Wings', 3);
+insert into foods (foodID, food, restaurantID) values (3, 'Sub Sandwiches', 4);
+insert into foods (foodID, food, restaurantID) values (4, 'Steak', 6);
+insert into foods (foodID, food, restaurantID) values (5, 'Burgers', 5);
+insert into foods (foodID, food, restaurantID) values (6, 'Chicken', 10);
+insert into foods (foodID, food, restaurantID) values (7, 'Pasta', 1);
+insert into foods (foodID, food, restaurantID) values (8, 'Brisket', 9);
+insert into foods (foodID, food, restaurantID) values (9, 'Pizza', 2);
