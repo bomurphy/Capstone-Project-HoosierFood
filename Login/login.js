@@ -1,9 +1,9 @@
 //Using jQuery to add funtion to google sign in, sign out buttons
 function onSignIn(googleUser) {
 
-    if  (profile != "" || profile != undefined || profile != null)  
+    if  (profile != "" || profile != undefined || profile != null) { 
         window.location.href = 'https://cgi.luddy.indiana.edu/~team51/Restaurant/restaurant.html'
-    
+    }
 
     var profile = googleUser.getBasicProfile();
     $("#name").text(profile.getName());
