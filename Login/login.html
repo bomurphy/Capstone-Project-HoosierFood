@@ -23,13 +23,16 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active red-text" aria-current="page" href="#">Restaurants</a>
+                <a class="nav-link active red-text" aria-current="page" href="../Restaurant/restaurant.html">Restaurants</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link red-text" href="#">Orders</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link red-text" href="#" tabindex="-1" aria-disabled="true">Reviews</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link red-text" href="../Filter/filter1.html" tabindex="-1" aria-disabled="true">Discovery</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link red-text" href="#" tabindex="-1" aria-disabled="true">Support</a>
@@ -40,8 +43,10 @@
               <button class="btn btn-outline-danger" type="submit">Register</button>
             </form> -->
             <form action="" class="d-flex">
-                <button class="login me-2">Login</button>
-                <button class="login">Register</button>
+                <button id="login-btn" class="login me-2">Login</button>
+                <div class="user hide"></div>
+                <button id="register-btn" class="login">Register</button>
+                <button class="signOutBtn login hide">Sign Out</button></button>
             </form>
           </div>
         </div>
@@ -50,7 +55,7 @@
       <section class="d-flex align-items-center flex-column hero-section h-100">
         <h2 class="mb-5 title-text red-text">Hoosier Food</h2>
         <!-- sign in btn -->
-        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        <div class="g-signin2" onclick="onSignIn();" data-onsuccess="onSignIn"></div>
     
         <div class="data">
             <p>Name</p>
@@ -59,7 +64,7 @@
             <img id="image" class="rounded-circle" width="100" height="100" />
             <p>Email</p>
             <p id="email"></p>
-            <button type="button" class="btn btn-danger" onclick="signOut();">Sign Out</button>
+            <button type="button" class="btn btn-danger">Sign Out</button>
         </div>
       </section>
 
