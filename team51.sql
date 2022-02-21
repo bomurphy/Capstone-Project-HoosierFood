@@ -107,6 +107,21 @@ insert into restaurants(restaurantID, RestaurantName, Street, City, State, Zip, 
 insert into restaurants(restaurantID, RestaurantName, Street, City, State, Zip, PhoneNum) values (8, 'The Tap', '101 N College Ave', 'Bloomington', 'IN', '47404', '812-278-8579');
 insert into restaurants(restaurantID, RestaurantName, Street, City, State, Zip, PhoneNum) values (9, 'SmokeWorks', '121 N College Ave', 'Bloomington', 'IN', '47404', '812-287-8190');
 insert into restaurants(restaurantID, RestaurantName, Street, City, State, Zip, PhoneNum) values (10, 'Chick-fil-a', '3020 E 3rd St College Mall pad', 'Bloomington', 'IN', '47401', '812-330-5590');
+insert into restaurants(restaurantID, RestaurantName, Street, City, State, Zip, PhoneNum) values (11, '3 Amigos', '340 S Patterson Dr', 'Bloomington', 'IN', '47401', '812-369-4192');
+insert into restaurants(restaurantID, RestaurantName, Street, City, State, Zip, PhoneNum) values (12, 'Arbys', '2713 E 3rd St', 'Bloomington', 'IN', '47401', '812-332-1665');
+insert into restaurants(restaurantID, RestaurantName, Street, City, State, Zip, PhoneNum) values (13, 'Applebees', '2800 E 3rd St', 'Bloomington', 'IN', '47401', '812-336-9147');
+insert into restaurants(restaurantID, RestaurantName, Street, City, State, Zip, PhoneNum) values (14, 'Amrit India', '124 N Walnut St', 'Bloomington', 'IN', '47404', '812-650-3812');
+insert into restaurants(restaurantID, RestaurantName, Street, City, State, Zip, PhoneNum) values (15, 'Asuka', '2632 E 3rd St', 'Bloomington', 'IN', '47401', '812-333-8325');
+insert into restaurants(restaurantID, RestaurantName, Street, City, State, Zip, PhoneNum) values (16, 'Avers Pizza', '1285 S College Mall Rd', 'Bloomington', 'IN', '47401', '812-331-5555');
+insert into restaurants(restaurantID, RestaurantName, Street, City, State, Zip, PhoneNum) values (17, 'Azzip Pizza', '2894 E 3rd St', 'Bloomington', 'IN', '47401', '812-336-2755');
+insert into restaurants(restaurantID, RestaurantName, Street, City, State, Zip, PhoneNum) values (18, 'Baked Bloomington', '115 N Washington Street', 'Bloomington', 'IN', '47408', '812-336-2253');
+insert into restaurants(restaurantID, RestaurantName, Street, City, State, Zip, PhoneNum) values (19, 'Bedrak Cafe', '409 S Walnut Street', 'Bloomington', 'IN', '47401', '812-650-1110');
+insert into restaurants(restaurantID, RestaurantName, Street, City, State, Zip, PhoneNum) values (20, 'Big Woods Bloomington', '116 N Grant Street', 'Bloomington', 'IN', '47408', '812-335-1821');
+insert into restaurants(restaurantID, RestaurantName, Street, City, State, Zip, PhoneNum) values (21, 'BJs Restaurant', '411 S College Mall Road', 'Bloomington', 'IN', '47401', '812-650-0740');
+insert into restaurants(restaurantID, RestaurantName, Street, City, State, Zip, PhoneNum) values (22, 'Blondies Cookies', '2954 E 3rd Street', 'Bloomington', 'IN', '47401', '812-333-2710');
+insert into restaurants(restaurantID, RestaurantName, Street, City, State, Zip, PhoneNum) values (23, 'Blooming Thai', '107 N College Avenue', 'Bloomington', 'IN', '47404', '812-369-4229');
+insert into restaurants(restaurantID, RestaurantName, Street, City, State, Zip, PhoneNum) values (24, 'Bloomington Bagel Company', '1318 E Third Street', 'Bloomington', 'IN', '47401', '812-278-8353');
+insert into restaurants(restaurantID, RestaurantName, Street, City, State, Zip, PhoneNum) values (25, 'Bubs Burgers', '480 N Morton Street', 'Bloomington', 'IN', '47404', '812-331-2827');
 
 insert into favorites (userID, restaurantID, userLocation, distance) values (3, 1, '635 Cardinal Circle, Bloomington, IN 47401', '4 mi');
 insert into favorites (userID, restaurantID, userLocation, distance) values (7, 6, '573 Longview Street, Bloomington, IN 47401', '3.7 mi');
@@ -129,6 +144,7 @@ insert into filter (restaurantID, RestaurantName, PictureURL, PhoneNum) values (
 insert into filter (restaurantID, RestaurantName, PictureURL, PhoneNum) values (8, 'The Tap', 'https://images.app.goo.gl/YnGMWFfgcMYrUAqY9', '8122788579');
 insert into filter (restaurantID, RestaurantName, PictureURL, PhoneNum) values (9, 'SmokeWorks', 'https://images.app.goo.gl/t4yZfALQFGpBKtuG9', '8122878190');
 insert into filter (restaurantID, RestaurantName, PictureURL, PhoneNum) values (10, 'Chick-fil-a', 'https://images.app.goo.gl/C4pnzWjX82jGymBdA', '8123305590');
+insert into filter (restaurantID, RestaurantName, PictureURL, PhoneNum) values (11, '3 Amigos', 'https://images.app.goo.gl/eBD6r67zfKKaCifJ8', '8123694192');
 
 insert into admins (FirstName, LastName, PhoneNum, Email) values ('Finn', 'McSweeney', '9177551050', 'fmcsween@iu.edu');
 insert into admins (FirstName, LastName, PhoneNum, Email) values ('Bowen', 'Murphy', '8123408030', 'bomurphyiu.edu');
