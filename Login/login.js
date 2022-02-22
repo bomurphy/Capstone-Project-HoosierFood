@@ -19,6 +19,7 @@ function onSignIn(googleUser) {
 
 // set profile to object
 // JSON Parse session to get data and pass the data
+let userIcon = `<img class="user-icon-img"  src='${sessionStorage.getItem('userimage')}' alt='user_img' />        `;        
 
     if  (profile != "" || profile != undefined || profile != null) {  
         window.location.href = 'https://cgi.luddy.indiana.edu/~team51/Restaurant/restaurant.html'
@@ -30,7 +31,6 @@ function onSignIn(googleUser) {
         sessionStorage.setItem('useremail', `${userEmail}`);
         sessionStorage.setItem('userimage', `${userImg}`);
 
-        let userIcon = `<img class="user-icon-img"  src='${sessionStorage.getItem('userimage')}' alt='user_img' />        `;        
         
         loginBtn.classList.add('hide');        
         registerBtn.classList.add('hide');        
@@ -47,7 +47,7 @@ function onSignIn(googleUser) {
         sessionStorage.removeItem('useremail')
         sessionStorage.removeItem('username')
         sessionStorage.removeItem('userimage')
-        user.classList.add('hide');
+        user.style.display = 'none'
         loginBtn.classList.remove('hide')
     
     }
