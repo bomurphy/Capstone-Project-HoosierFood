@@ -72,8 +72,15 @@ h1{
 }
 	
 	
-	
-	
+.wrapper{
+	background-color: #990000;
+	text-align: center;
+	padding: 10px;
+	color: #FFFDD0;
+	font-size: 17px;
+	width: 1000px;
+	margin: auto;
+}
 
 .Submit {
   background-color: #4CAF50; /* Green */
