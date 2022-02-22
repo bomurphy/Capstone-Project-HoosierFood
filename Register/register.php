@@ -13,13 +13,13 @@ if (!isset($_POST['username'], $_POST['password'], $_POST['Email'], $_POST['Firs
 	exit('Please complete the registration form!');
 }
 // Make sure the submitted registration values are not empty.
-if (empty($_POST['username']) || empty($_POST['password']) || empty($_POST['Email']), empty($_POST['FirstName']), empty($_POST['LastName']), empty($_POST['Street']), empty($_POST['City']), empty($_POST['State']), empty($_POST['Zip'])) {
+if (empty($_POST['username']) || empty($_POST['password']) || empty($_POST['Email']) || empty($_POST['FirstName']) || empty($_POST['LastName']) || empty($_POST['Street']) || empty($_POST['City']) || empty($_POST['State']) || empty($_POST['Zip'])) {
 	// One or more values are empty.
 	exit('Please complete the registration form');
 }
 
 // We need to check if the account with that username exists.
-if ($stmt = $con->prepare('SELECT UserID, password FROM accounts WHERE username = ?')) {
+if ($stmt = $con->prepare('SELECT UserID, password FROM users WHERE username = ?')) {
 	// Bind parameters (s = string, i = int, b = blob, etc), hash the password using the PHP password_hash function.
 	$stmt->bind_param('s', $_POST['username']);
 	$stmt->execute();
@@ -30,7 +30,7 @@ if ($stmt = $con->prepare('SELECT UserID, password FROM accounts WHERE username 
 		echo 'Username exists, please choose another!';
 	} else {
 		// Username doesnt exists, insert new account
-if ($stmt = $con->prepare('INSERT INTO users (username, password, Email, FirstName, LastName, Street, City, State, Zip) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)')) {
+if ($stmt = $con->prepare('INSERT INTO users (Email, FirstName, LastName, Street, City, State, Zip, username, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)')) {
 	// We do not want to expose passwords in our database, so hash the password and use password_verify when a user logs in.
 	$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 	$stmt->bind_param('sss', $_POST['username'], $password, $_POST['Email']);
