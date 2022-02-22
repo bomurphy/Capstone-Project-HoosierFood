@@ -19,11 +19,11 @@ if (sessionStorage.getItem('useremail') != '' || sessionStorage.getItem('userema
 }
 
 function googleSignOut() {
+    window.location.href = 'https://cgi.luddy.indiana.edu/~team51/Login/login.html'
     sessionStorage.removeItem('useremail')
     sessionStorage.removeItem('username')
     sessionStorage.removeItem('userimage')
     user.style.display = 'none'
-    window.location.href = 'https://cgi.luddy.indiana.edu/~team51/Login/login.html'
 
     
     loginBtn.classList.remove('hide')

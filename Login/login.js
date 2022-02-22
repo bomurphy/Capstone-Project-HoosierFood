@@ -1,5 +1,6 @@
 //Using jQuery to add funtion to google sign in, sign out buttons
 
+window.onload = sessionStorage.clear();
 
 let signOut = document.querySelector('.signOutBtn')                
 
@@ -44,12 +45,12 @@ let userIcon = `<img class="user-icon-img"  src='${sessionStorage.getItem('useri
 }
 
     function googleSignOut() {
+        window.location.href = 'https://cgi.luddy.indiana.edu/~team51/Login/login.html'
         sessionStorage.removeItem('useremail')
         sessionStorage.removeItem('username')
         sessionStorage.removeItem('userimage')
         user.style.display = 'none'
         loginBtn.classList.remove('hide')
-        window.location.href = 'https://cgi.luddy.indiana.edu/~team51/Login/login.html'
     
     }
 signOutBtn.addEventListener('click', googleSignOut)
