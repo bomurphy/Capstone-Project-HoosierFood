@@ -1,6 +1,5 @@
 //Using jQuery to add funtion to google sign in, sign out buttons
 
-window.onload = sessionStorage.clear();
 
 let signOut = document.querySelector('.signOutBtn')                
 
