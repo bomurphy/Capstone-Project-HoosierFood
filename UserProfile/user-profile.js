@@ -12,12 +12,12 @@ if (sessionStorage.getItem('useremail') != '' || sessionStorage.getItem('userema
     signOutBtn.classList.remove('hide')
 
     let name = sessionStorage.getItem('username');
-    let email = sessionStorage.getItem('useremail');
+    // let email = sessionStorage.getItem('useremail');
 
     userNameCont.insertAdjacentHTML('afterbegin', name);
-    userEmailCont.insertAdjacentHTML('afterbegin', email)
+    userEmailCont.insertAdjacentHTML('afterbegin', sessionStorage.getItem('useremail'))
 
-    let userIcon = `<img src="${sessionStorage.getItem('userimage')}" />`;
+    let userIcon = `<img class="user-icon-img" src="${sessionStorage.getItem('userimage')}" />`;
 
 
 

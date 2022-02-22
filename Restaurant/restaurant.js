@@ -9,7 +9,7 @@ if (sessionStorage.getItem('useremail') != '' || sessionStorage.getItem('userema
     user.classList.remove('hide')
     signOutBtn.classList.remove('hide')
 
-    let userIcon = `<img src="${sessionStorage.getItem('userimage')}" />`;
+    let userIcon = `<img class="user-icon-img" src="${sessionStorage.getItem('userimage')}" />`;
 
     user.insertAdjacentHTML('afterbegin', userIcon)
 
@@ -17,8 +17,8 @@ if (sessionStorage.getItem('useremail') != '' || sessionStorage.getItem('userema
 }
 
 function userProfile() {
-    // window.location.href = ''
-    // To User Profile Page
+    window.location.href = 'https://cgi.luddy.indiana.edu/~team51/UserProfile'
+    
 }
 
 user.addEventListener('click', userProfile());
