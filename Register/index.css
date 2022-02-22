@@ -72,8 +72,16 @@ h1{
   margin: auto;
 }
 
-.button {
-	color: red;
+.center{
+	margin:auto;
+	width: 1%;
+	background-color: #FFFDD0;
+	border: 2px solid black;
+	text-align: center;
+	padding: 15px 32px;
+	color: #990000;
+	font-size: 50px;
+  
 }
 	
 	
