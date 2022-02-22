@@ -40,8 +40,10 @@ else {
         sessionStorage.removeItem('username')
         sessionStorage.removeItem('userimage')
         user.style.display = 'none'
-        loginBtn.classList.remove('hide')
 
     
+    loginBtn.classList.remove('hide')
     }
+
 signOutBtn.addEventListener('click', googleSignOut)
+

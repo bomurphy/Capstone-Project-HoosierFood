@@ -48,7 +48,6 @@
               <button id="login-btn" class="login me-2">Login</button>
               <a href='../UserProfile/user-profile.html' class="user hide"></a>
               <button id="register-btn" class="login">Register</button>
-              <button class="signOutBtn login hide">Sign Out</button></button>
           </form>
           </div>
         </div>
