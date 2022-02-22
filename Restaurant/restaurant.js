@@ -16,12 +16,7 @@ if (sessionStorage.getItem('useremail') != '' || sessionStorage.getItem('userema
 
 }
 
-function userProfile() {
-    window.location.href = 'https://cgi.luddy.indiana.edu/~team51/UserProfile'
-    
-}
 
-user.addEventListener('click', userProfile());
 
 
 
