@@ -3,7 +3,7 @@ const registerBtn = document.querySelector('#register-btn')
 let user = document.querySelector('.user')
 let signOutBtn = document.querySelector('.signOutBtn')
 let userNameCont = document.querySelector('.name');
-let userEmailCont = document.querySelector('email');
+let userEmailCont = document.querySelector('.email');
 
 if (sessionStorage.getItem('useremail') != '' || sessionStorage.getItem('useremail') != undefined || sessionStorage.getItem('useremail') != null) {
     registerBtn.classList.add('hide')
