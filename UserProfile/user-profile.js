@@ -36,7 +36,13 @@ else {
 
 
     function googleSignOut() {
-        <img src="https://mail.google.com/mail/u/0/?logout&hl=en"/>
+        sessionStorage.removeItem('useremail')
+        sessionStorage.removeItem('username')
+        sessionStorage.removeItem('userimage')
+        user.style.display = 'none'
+
+    
+    loginBtn.classList.remove('hide')
     }
 
 signOutBtn.addEventListener('click', googleSignOut)
