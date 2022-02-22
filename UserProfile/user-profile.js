@@ -33,6 +33,7 @@ if (sessionStorage.getItem('useremail') != '' || sessionStorage.getItem('userema
 function googleSignOut() {
     const auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
+        sessionStorage.removeItem('useremail')
         user.classList.add('hide')
         loginBtn.classList.remove('hide')
 
@@ -43,5 +44,4 @@ function googleSignOut() {
 
     });
 }
-
 signOutBtn.addEventListener('click', googleSignOut)
