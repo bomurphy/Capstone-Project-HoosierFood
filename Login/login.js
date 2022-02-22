@@ -40,20 +40,17 @@ function onSignIn(googleUser) {
         signOut.addEventListener('click', googleSignOut())
 
     }
+    else {
+        return
+    }
 }
 
-function googleSignOut() {
-    const auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
+    function googleSignOut() {
         sessionStorage.removeItem('useremail')
-        user.classList.add('hide')
+        sessionStorage.removeItem('username')
+        sessionStorage.removeItem('userimage')
+        user.classList.add('hide');
         loginBtn.classList.remove('hide')
-
-        // Timer to redirect back to login screen after sign out        
-
-
-        
-
-    });
-}
+    
+    }
 signOutBtn.addEventListener('click', googleSignOut)
