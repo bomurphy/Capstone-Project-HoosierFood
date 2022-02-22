@@ -40,6 +40,8 @@ else {
         sessionStorage.removeItem('userimage')
         user.style.display = 'none'
         loginBtn.classList.remove('hide')
+        window.location.href = 'https://cgi.luddy.indiana.edu/~team51/Login/login.html'
+
     
     }
 signOutBtn.addEventListener('click', googleSignOut)
