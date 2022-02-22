@@ -74,3 +74,17 @@
 .hide {
     display: none;
 }
+
+.user-icon-img {
+    width: 100%;
+    border-radius: 25px;
+}
+
+.user {
+    cursor: pointer;
+    border-radius: 25px;
+    height: 50px;
+    width: 50px;
+    margin-right: 1rem;
+    margin-top: -.25rem;
+}

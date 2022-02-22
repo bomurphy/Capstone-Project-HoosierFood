@@ -16,6 +16,21 @@ if (sessionStorage.getItem('useremail') != '' || sessionStorage.getItem('userema
 
 }
 
+function googleSignOut() {
+    const auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+        user.classList.add('hide')
+        loginBtn.classList.remove('hide')
+
+        // Timer to redirect back to login screen after sign out        
+
+
+        
+
+    });
+}
+signOutBtn.addEventListener('click', googleSignOut)
+
 
 
 

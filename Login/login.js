@@ -21,7 +21,7 @@ function onSignIn(googleUser) {
 // JSON Parse session to get data and pass the data
 
     if  (profile != "" || profile != undefined || profile != null) {  
-        // window.location.href = 'https://cgi.luddy.indiana.edu/~bomurphy/capstone-individual/Restaurant/restaurant.html'
+        window.location.href = 'https://cgi.luddy.indiana.edu/~team51/Restaurant/restaurant.html'
         let loginBtn = document.querySelector('#login-btn')        
         let registerBtn = document.querySelector('#register-btn')        
         let user = document.querySelector('.user');
@@ -30,14 +30,14 @@ function onSignIn(googleUser) {
         sessionStorage.setItem('useremail', `${userEmail}`);
         sessionStorage.setItem('userimage', `${userImg}`);
 
-        let userIcon = `<img src='${sessionStorage.getItem('userimage')}' alt='user_img' />        `;        
+        let userIcon = `<img class="user-icon-img"  src='${sessionStorage.getItem('userimage')}' alt='user_img' />        `;        
         
         loginBtn.classList.add('hide');        
         registerBtn.classList.add('hide');        
         user.classList.remove('hide')        
         user.insertAdjacentHTML('afterbegin', userIcon)        
         signOut.classList.remove('hide');        
-        // signOut.addEventListener('click', googleSignOut())
+        signOut.addEventListener('click', googleSignOut())
 
     }
 }
@@ -45,15 +45,15 @@ function onSignIn(googleUser) {
 function googleSignOut() {
     const auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
-        alert("You have been signed out successfully");
-        $(".data").css("display", "none");
-
+        user.classList.add('hide')
+        loginBtn.classList.remove('hide')
 
         // Timer to redirect back to login screen after sign out        
-$(".g-signin2").css("display", "block");
 
 
         
 
     });
 }
+
+signOutBtn.addEventListener('click', googleSignOut)
