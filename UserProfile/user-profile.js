@@ -29,7 +29,8 @@ if (sessionStorage.getItem('useremail') != '' || sessionStorage.getItem('userema
 
 }
 else {
-    return
+    console.log('yay')
+    
 }
 
 

@@ -37,11 +37,9 @@ function onSignIn(googleUser) {
         user.classList.remove('hide')        
         user.insertAdjacentHTML('afterbegin', userIcon)        
         signOut.classList.remove('hide');        
-        signOut.addEventListener('click', googleSignOut())
-
     }
     else {
-        return
+    console.log('yay')
     }
 }
 
