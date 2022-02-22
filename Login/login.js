@@ -53,4 +53,4 @@ let userIcon = `<img class="user-icon-img"  src='${sessionStorage.getItem('useri
         loginBtn.classList.remove('hide')
     
     }
-signOutBtn.addEventListener('click', googleSignOut)
+signOut.addEventListener('click', googleSignOut)
