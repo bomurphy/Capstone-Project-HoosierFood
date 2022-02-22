@@ -16,6 +16,17 @@ if (sessionStorage.getItem('useremail') != '' || sessionStorage.getItem('userema
 
 }
 
+function userProfile() {
+    // window.location.href = ''
+    // To User Profile Page
+}
+
+user.addEventListener('click', userProfile());
+
+
+
+
+
 
 
 // //Using jQuery to add funtion to google sign in, sign out buttons
