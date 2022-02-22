@@ -197,3 +197,6 @@ h1{
     border-radius: 25px;
 }
 
+.signOutBtn {
+    text-decoration: none;
+}
