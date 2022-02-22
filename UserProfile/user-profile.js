@@ -19,7 +19,8 @@ if (sessionStorage.getItem('useremail') != '' || sessionStorage.getItem('userema
     userEmailCont.insertAdjacentHTML('afterbegin', sessionStorage.getItem('useremail'))
 
 
-
+// Cant get sign out function to work, show example on user-profile page where it redirects to login and keeps you signed in
+// as well as show resturant page demo where it signs you out but does not redirect to login page
 
 
 
@@ -35,7 +36,6 @@ else {
 
 
     function googleSignOut() {
-        window.location.href = 'https://cgi.luddy.indiana.edu/~team51/Login/login.html'
         sessionStorage.removeItem('useremail')
         sessionStorage.removeItem('username')
         sessionStorage.removeItem('userimage')

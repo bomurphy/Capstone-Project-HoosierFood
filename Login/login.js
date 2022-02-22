@@ -44,7 +44,6 @@ let userIcon = `<img class="user-icon-img"  src='${sessionStorage.getItem('useri
 }
 
     function googleSignOut() {
-        window.location.href = 'https://cgi.luddy.indiana.edu/~team51/Login/login.html'
         sessionStorage.removeItem('useremail')
         sessionStorage.removeItem('username')
         sessionStorage.removeItem('userimage')
