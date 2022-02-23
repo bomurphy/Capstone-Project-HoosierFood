@@ -41,7 +41,7 @@ else {
             alert("You have been signed out successfully");
             $(".data").css("display", "none");
             $(".g-signin2").css("display", "block");
-            loginBtn.classList.remove('hide')
+        loginBtn.classList.remove('hide')
     });
 }
 
