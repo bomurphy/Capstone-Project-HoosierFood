@@ -89,7 +89,7 @@ if(isset($_POST['submit']))
 </br>
 </br>
 <div class="button">
-<form action="../Login/login1.php">
+<form action="../Login/login1.html">
     <input type="submit" value="Login" />
 </form>
 </div>
