@@ -36,13 +36,13 @@ else {
 
 
     function googleSignOut() {
-        var auth2 = gapi.auth2.getAuthInstance();
-        auth2.googleSignOut().then(function () {
-            alert("You have been signed out successfully");
-            $(".data").css("display", "none");
-            $(".g-signin2").css("display", "block");
-        loginBtn.classList.remove('hide')
-    });
+        sessionStorage.removeItem('useremail')
+        sessionStorage.removeItem('username')
+        sessionStorage.removeItem('userimage')
+        user.style.display = 'none'
+
+    
+    loginBtn.classList.remove('hide')
 }
 
 signOutBtn.addEventListener('click', googleSignOut)
