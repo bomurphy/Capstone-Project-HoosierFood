@@ -32,7 +32,7 @@ signOutBtn.addEventListener('click', function () {
         $(".g-signin2").css("display", "block");
         loginBtn.classList.remove('hide')
         auth2.getAuthInstance().disconnect()
-        window.location="../login/login.html"
+        //window.location="../login/login.html"
 
     });
     
