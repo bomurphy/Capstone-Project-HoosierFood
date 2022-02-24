@@ -30,8 +30,11 @@ signOutBtn.addEventListener('click', function () {
         alert("You have been signed out successfully");
         $(".data").css("display", "none");
         $(".g-signin2").css("display", "block");
+        loginBtn.classList.remove('hide')
+        window.location="../login/login.html"
+
     });
-    loginBtn.classList.remove('hide')
+    
 })
 
 
