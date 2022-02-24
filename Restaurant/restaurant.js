@@ -35,7 +35,7 @@ signOutBtn.addEventListener('click', function () {
         //
 
     });
-    window.location="../login/login.html"
+    window.location="https://cgi.luddy.indiana.edu/~team51/Login/login.html"
 })
 
 
