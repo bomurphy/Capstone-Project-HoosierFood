@@ -18,17 +18,21 @@ if (sessionStorage.getItem('useremail') != '' || sessionStorage.getItem('userema
     console.log('yay')
 }
 
-function googleSignOut() {
-    sessionStorage.removeItem('useremail')
-    sessionStorage.removeItem('username')
-    sessionStorage.removeItem('userimage')
-    user.style.display = 'none'
+
 
     
-    loginBtn.classList.remove('hide')
+    // loginBtn.classList.remove('hide')
 
-}
-signOutBtn.addEventListener('click', googleSignOut)
+
+signOutBtn.addEventListener('click', function () {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+        alert("You have been signed out successfully");
+        $(".data").css("display", "none");
+        $(".g-signin2").css("display", "block");
+    });
+    loginBtn.classList.remove('hide')
+})
 
 
 
