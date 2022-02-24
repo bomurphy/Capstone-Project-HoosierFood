@@ -31,7 +31,6 @@ signOutBtn.addEventListener('click', function () {
         $(".data").css("display", "none");
         $(".g-signin2").css("display", "block");
         loginBtn.classList.remove('hide')
-        auth2.getAuthInstance().disconnect()
         //
 
     });
