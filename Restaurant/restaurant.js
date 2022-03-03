@@ -31,10 +31,10 @@ signOutBtn.addEventListener('click', function () {
         $(".data").css("display", "none");
         $(".g-signin2").css("display", "block");
         loginBtn.classList.remove('hide')
-        //
+        window.location="https://cgi.luddy.indiana.edu/~team51/Login/login.html"
 
     });
-    window.location="https://cgi.luddy.indiana.edu/~team51/Login/login.html"
+    //"
 })
 
 
