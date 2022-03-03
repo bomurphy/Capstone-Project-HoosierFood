@@ -43,7 +43,7 @@
               <button class="btn btn-outline-danger" type="submit">Register</button>
             </form> -->
             <form action="" class="d-flex">
-              <a href='../UserProfile/user-profile.html' class="user hide"></a>
+              <a href='../UserProfile/user-profile.html' class="user"></a>
                 <!-- <button id="login-btn" class="login me-2">Login</button>
                 
                 <a href="https://cgi.luddy.indiana.edu/~team51/Register/register.php" id="register-btn" class="login">Register</button></a>
@@ -97,9 +97,15 @@
     auth2.signOut().then(function () {
       console.log('User signed out.');
     }).then(function(){
-      window.location="../Login/login.html"
+      window.location.href="../Login/login.html"
     });
   }
+
+  function onLoad() {
+      gapi.load('auth2', function() {
+        gapi.auth2.init();
+      });
+    }
 var slider = document.getElementById("myRange");
 var output = document.getElementById("demo");
 output.innerHTML = slider.value;
@@ -109,6 +115,7 @@ slider.oninput = function() {
 }
 
 </script>
+<script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
 		</div>
 	
 		<div class="float-child2">
