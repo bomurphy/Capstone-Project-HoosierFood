@@ -59,7 +59,25 @@
 
       </section>
 
-      <footer class="footer-bg d-flex align-items-center position-fixed bottom-0 justify-content-end w-100 p-2">
+      <script>
+        function signOut() {
+          var auth2 = gapi.auth2.getAuthInstance();
+          auth2.signOut().then(function () {
+            console.log('User signed out.');
+          }).then(function(){
+            window.location.href="../Login/login.html"
+          });
+        }
+      
+        function onLoad() {
+            gapi.load('auth2', function() {
+              gapi.auth2.init();
+            });
+          }
+        </script>
+<script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+      
+        <footer class="footer-bg d-flex align-items-center position-fixed bottom-0 justify-content-end w-100 p-2">
         <div class="mt-3 d-flex">
             <a href="" class="me-3 footer-link">Rewards</a>
             <a href="" class="me-3 footer-link">Contact</a>
