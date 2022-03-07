@@ -183,6 +183,10 @@ h1{
     color: black;
 }
 
+.all-content {
+    min-height: 100vh;
+}
+
 .user {
     cursor: pointer;
     border-radius: 25px;

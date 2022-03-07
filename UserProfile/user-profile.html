@@ -35,6 +35,9 @@
                 <a class="nav-link red-text" href="../Filter/filter1.html" tabindex="-1" aria-disabled="true">Discovery</a>
               </li>
               <li class="nav-item">
+                <a class="nav-link red-text" href="../Menu/menu.php" tabindex="-1" aria-disabled="true">Menus</a>  
+              </li>
+              <li class="nav-item">
                 <a class="nav-link red-text" href="#" tabindex="-1" aria-disabled="true">Support</a>
               </li>
             </ul>

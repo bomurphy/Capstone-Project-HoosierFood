@@ -70,8 +70,8 @@ function filterTable($query)
             }
         </style>
     </head>
-    <body>
-    <body class="nav-background">
+    
+    <body class="nav-background all-content">
     <nav class="navbar navbar-expand-lg p-2 border-bottom nav-background">
         <div class="container-fluid">
           <img src="../photos/iu-logo.svg" class="iu-logo me-5" alt="">
@@ -91,6 +91,8 @@ function filterTable($query)
               </li>
               <li class="nav-item">
                 <a class="nav-link red-text" href="../Filter/filter.php" tabindex="-1" aria-disabled="true">Discovery</a>
+              <li class="nav-item">
+                <a class="nav-link red-text" href="../Menu/menu.php" tabindex="-1" aria-disabled="true">Menus</a>  
               </li>
               <li class="nav-item">
                 <a class="nav-link red-text" href="#" tabindex="-1" aria-disabled="true">Support</a>
@@ -111,7 +113,7 @@ function filterTable($query)
           </div>
         </div>
       </nav>
-		<h2>Menu</h2>
+		<h2>Restaurant Menus</h2>
 		
 		<table>
                 <tr>
@@ -125,7 +127,7 @@ function filterTable($query)
             <input type="text" name="valueToSearch" placeholder="Value To Search"><br><br>
             <input type="submit" name="search" value="Filter"><br><br>
             
-            <table>
+            <table class="p-5">
       <!-- populate table from mysql database -->
                 <?php while($row = mysqli_fetch_array($search_result)):?>
                 <tr>
