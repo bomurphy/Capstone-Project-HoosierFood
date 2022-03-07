@@ -56,10 +56,14 @@ function filterTable($query)
 <html>
     <head>
         <title>Menu</title>
-        <meta name="google-signin-client_id" 
+        <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" 
         content="1027531663911-al3p7o7qrb5eqdpq6j3ea1mn63tvg5jc.apps.googleusercontent.com">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="restaurant.css" >
         <style>
             body {
                 background-color: beige;
@@ -67,7 +71,8 @@ function filterTable($query)
         </style>
     </head>
     <body>
-    nav class="navbar navbar-expand-lg p-2 border-bottom nav-background">
+    <body class="nav-background">
+    <nav class="navbar navbar-expand-lg p-2 border-bottom nav-background">
         <div class="container-fluid">
           <img src="../photos/iu-logo.svg" class="iu-logo me-5" alt="">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -133,6 +138,14 @@ function filterTable($query)
                 <?php endwhile;?>
             </table>
         </form>
+
+        <footer class="footer-bg d-flex align-items-center position-fixed bottom-0 justify-content-end w-100 p-2">
+        <div class="mt-3 d-flex">
+            <a href="" class="me-3 footer-link">Rewards</a>
+            <a href="" class="me-3 footer-link">Contact</a>
+        </div>
+     
+      </footer>
         
         <script src="https://apis.google.com/js/platform.js" async defer></script> 
     <!--adding bootstrap and jQuery extentions-->
