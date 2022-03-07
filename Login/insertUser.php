@@ -1,5 +1,5 @@
 <?php
-    require_once 'vendor/autoload.php';
+    require_once './google-api/vendor/autoload.php';
     
     $connect = mysqli_connect("db.soic.indiana.edu", "i494f21_team51", "my+sql=i494f21_team51", "i494f21_team51");
 
