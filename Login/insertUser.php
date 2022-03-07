@@ -1,7 +1,7 @@
 <?php
     require_once './google-api/vendor/autoload.php';
     
-    $connect = mysqli_connect("db.soic.indiana.edu", "i494f21_team51", "my+sql=i494f21_team51", "i494f21_team51");
+    $connect = mysqli_connect("db.sice.indiana.edu", "i494f21_team51", "my+sql=i494f21_team51", "i494f21_team51");
 
     if (!$con) {
         die("Failed to connect to server: " . mysqli_connect_error());
