@@ -13,9 +13,10 @@ function onSignIn(googleUser) {
     $(".g-signin2").css("display", "none");
 
     const profile = googleUser.getBasicProfile();
-    userImg = profile.getImageUrl();
-    userName = profile.getName();
-    userEmail = profile.getEmail();
+    // userImg = profile.getImageUrl();
+    // userName = profile.getName();
+    // userEmail = profile.getEmail();
+    console.log(profile)
 
     var id_token = googleUser.getAuthResponse().id_token;
     // console.log(userName)
