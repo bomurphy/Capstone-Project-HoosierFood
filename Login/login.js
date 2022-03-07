@@ -17,6 +17,7 @@ function onSignIn(googleUser) {
     userName = profile.getName();
     userEmail = profile.getEmail();
 
+    var id_token = googleUser.getAuthResponse().id_token;
     // console.log(userName)
 
     // const sendProfile = {
@@ -44,12 +45,20 @@ let userIcon = `<img class="user-icon-img"  src='${sessionStorage.getItem('useri
         // xhr.setRequestHeader("Content-Type", "application/json")
         // xhr.send(jsonProfile)
 
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'https://cgi.luddy.indiana.edu/~team51/Login/insertUser.php');
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.onload = function() {
+            console.log('Signed in as: ' + xhr.responseText);
+        };
+        xhr.send('idtoken=' + id_token);
+
         
-        loginBtn.classList.add('hide');        
-        registerBtn.classList.add('hide');        
-        user.classList.remove('hide')        
-        user.insertAdjacentHTML('afterbegin', userIcon)        
-        signOut.classList.remove('hide');        
+        // loginBtn.classList.add('hide');        
+        // registerBtn.classList.add('hide');        
+        // user.classList.remove('hide')        
+        // user.insertAdjacentHTML('afterbegin', userIcon)        
+        // signOut.classList.remove('hide');        
     }
     else {
     console.log('yay')
