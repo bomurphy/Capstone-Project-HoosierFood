@@ -68,6 +68,10 @@ function filterTable($query)
             body {
                 background-color: beige;
             }
+
+            form {
+                margin-bottom: 2.5rem;
+            }
         </style>
     </head>
     
