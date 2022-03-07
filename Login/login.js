@@ -17,12 +17,12 @@ function onSignIn(googleUser) {
     userName = profile.getName();
     userEmail = profile.getEmail();
 
-    console.log(userName)
+    // console.log(userName)
 
-    const sendProfile = {
-        name: userName,
-        email: userEmail
-    }
+    // const sendProfile = {
+    //     name: userName,
+    //     email: userEmail
+    // }
 
 // set profile to object
 // JSON Parse session to get data and pass the data
