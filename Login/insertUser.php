@@ -3,7 +3,7 @@
     
     $connect = mysqli_connect("db.sice.indiana.edu", "i494f21_team51", "my+sql=i494f21_team51", "i494f21_team51");
 
-    if (!$con) {
+    if (!$connect) {
         die("Failed to connect to server: " . mysqli_connect_error());
     } else {
         {echo "Connected to server";}
