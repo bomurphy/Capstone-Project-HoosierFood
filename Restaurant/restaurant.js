@@ -1,5 +1,3 @@
-const loginBtn = document.querySelector('#login-btn')
-const registerBtn = document.querySelector('#register-btn')
 let user = document.querySelector('.user')
 let signOutBtn = document.querySelector('.signOutBtn')
 

@@ -32,8 +32,8 @@ let userIcon = `<img class="user-icon-img"  src='${sessionStorage.getItem('useri
 
     if  (profile != "" || profile != undefined || profile != null) {  
         window.location.href = 'https://cgi.luddy.indiana.edu/~team51/Restaurant/restaurant.html'
-        let loginBtn = document.querySelector('#login-btn')        
-        let registerBtn = document.querySelector('#register-btn')        
+        // let loginBtn = document.querySelector('#login-btn')        
+        // let registerBtn = document.querySelector('#register-btn')        
         let user = document.querySelector('.user');
 
         sessionStorage.setItem('username', `${userName}`);
@@ -64,12 +64,12 @@ let userIcon = `<img class="user-icon-img"  src='${sessionStorage.getItem('useri
     }
 }
 
-    function googleSignOut() {
-        sessionStorage.removeItem('useremail')
-        sessionStorage.removeItem('username')
-        sessionStorage.removeItem('userimage')
-        user.style.display = 'none'
-        loginBtn.classList.remove('hide')
+//     function googleSignOut() {
+//         sessionStorage.removeItem('useremail')
+//         sessionStorage.removeItem('username')
+//         sessionStorage.removeItem('userimage')
+//         user.style.display = 'none'
+//         loginBtn.classList.remove('hide')
     
-    }
-signOut.addEventListener('click', googleSignOut)
+//     }
+// signOut.addEventListener('click', googleSignOut)

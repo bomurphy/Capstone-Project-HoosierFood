@@ -73,6 +73,10 @@ function filterTable($query)
                 margin-bottom: 2.5rem;
                 padding: 0 1rem;
             }
+
+            h2 {
+                padding-left: 1rem;
+            }
         </style>
     </head>
     
