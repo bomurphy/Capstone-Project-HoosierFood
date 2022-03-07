@@ -34,9 +34,9 @@ let userIcon = `<img class="user-icon-img"  src='${sessionStorage.getItem('useri
         let registerBtn = document.querySelector('#register-btn')        
         let user = document.querySelector('.user');
 
-        // sessionStorage.setItem('username', `${userName}`);
-        // sessionStorage.setItem('useremail', `${userEmail}`);
-        // sessionStorage.setItem('userimage', `${userImg}`);
+        sessionStorage.setItem('username', `${userName}`);
+        sessionStorage.setItem('useremail', `${userEmail}`);
+        sessionStorage.setItem('userimage', `${userImg}`);
 
         const jsonProfile = JSON.stringify(sendProfile)
         const xhr = new XMLHttpRequest()

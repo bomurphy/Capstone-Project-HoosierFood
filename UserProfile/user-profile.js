@@ -13,16 +13,10 @@ if (sessionStorage.getItem('useremail') != '' || sessionStorage.getItem('userema
     signOutBtn.classList.remove('hide')
 
     let name = sessionStorage.getItem('username');
-    // let email = sessionStorage.getItem('useremail');
+    let email = sessionStorage.getItem('useremail');
 
     userNameCont.insertAdjacentHTML('afterbegin', name);
     userEmailCont.insertAdjacentHTML('afterbegin', sessionStorage.getItem('useremail'))
-
-
-// Cant get sign out function to work, show example on user-profile page where it redirects to login and keeps you signed in
-// as well as show resturant page demo where it signs you out but does not redirect to login page
-
-
 
 
     user.insertAdjacentHTML('afterbegin', userIcon)
