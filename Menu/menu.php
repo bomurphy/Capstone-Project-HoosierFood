@@ -25,3 +25,28 @@
 
     }
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+</head>
+<body>
+    <div class="">
+        <table>
+            <tr>
+                <td>Restaurant</td>
+                <td>URL</td>
+            </tr>
+            <?php while ($row = $result->fetch_assoc()):?>
+            <tr>
+                <td><?php echo $row['RestaurantName'];?></td>
+                <td><?php echo $row['menuURL'];?></td>
+            </tr>
+            <?php endwhile;?>
+        </table>
+    </div>
+</body>
+</html>
