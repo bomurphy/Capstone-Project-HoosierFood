@@ -49,9 +49,7 @@ let userIcon = `<img class="user-icon-img"  src='${sessionStorage.getItem('useri
         xhr.onload = function() {
             console.log('Signed in as: ' + xhr.responseText);
         };
-        xhr.send('idtoken=' + id_token);
-        xhr.open('POST', 'https://cgi.luddy.indiana.edu/~team51/Login/insertUser.php');
-        xhr.send(jsonProfile)
+        xhr.send('idtoken=' + id_token, jsonProfile);
 
 
         
