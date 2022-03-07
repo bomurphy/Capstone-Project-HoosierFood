@@ -13,9 +13,9 @@ function onSignIn(googleUser) {
     $(".g-signin2").css("display", "none");
 
     const profile = googleUser.getBasicProfile();
-    // userImg = profile.getImageUrl();
-    // userName = profile.getName();
-    // userEmail = profile.getEmail();
+    userImg = profile.getImageUrl();
+    userName = profile.getName();
+    userEmail = profile.getEmail();
     console.log(profile)
 
     var id_token = googleUser.getAuthResponse().id_token;
@@ -47,7 +47,7 @@ let userIcon = `<img class="user-icon-img"  src='${sessionStorage.getItem('useri
         // xhr.send(jsonProfile)
 
         var xhr = new XMLHttpRequest();
-        xhr.open('POST', 'https://cgi.luddy.indiana.edu/~team51/Login/insertUser.php');
+        xhr.open('POST', 'http://cgi.luddy.indiana.edu/~team51/Login/insertUser.php');
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.onload = function() {
             console.log('Signed in as: ' + xhr.responseText);
