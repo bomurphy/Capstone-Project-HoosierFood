@@ -18,6 +18,13 @@
     width: 50px;
 }
 
+.user-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: .1rem;
+}
+
 .hide {
     display: none;
 }
