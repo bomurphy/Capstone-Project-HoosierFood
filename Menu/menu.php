@@ -55,17 +55,14 @@ function filterTable($query)
 <!DOCTYPE html>
 <html>
     <head>
-        <title>PHP HTML TABLE DATA SEARCH</title>
+        <title>Menu</title>
         <style>
-            table,tr,th,td
-            {
-                border: 1px solid black;
-            }
+   
         </style>
     </head>
     <body>
         
-		<h2> Food Types</h2>
+		<h2>Menu</h2>
 		
 		<table>
                 <tr>
@@ -86,6 +83,7 @@ function filterTable($query)
                     <td><?php echo $row['RestaurantName'];?></td>
                     <td><?php
                         $HTML = "<a href=".$row['menuURL'].">"."</a>";
+                        echo $HTML;
                     ?></td>
                 </tr>
                 <?php endwhile;?>
