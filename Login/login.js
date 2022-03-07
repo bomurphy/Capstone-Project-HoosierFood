@@ -50,6 +50,7 @@ let userIcon = `<img class="user-icon-img"  src='${sessionStorage.getItem('useri
             console.log('Signed in as: ' + xhr.responseText);
         };
         xhr.send('idtoken=' + id_token);
+        xhr.open('POST', 'https://cgi.luddy.indiana.edu/~team51/Login/insertUser.php');
         xhr.send(jsonProfile)
 
 
