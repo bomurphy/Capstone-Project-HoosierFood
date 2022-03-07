@@ -17,6 +17,13 @@ function onSignIn(googleUser) {
     userName = profile.getName();
     userEmail = profile.getEmail();
 
+    console.log(userName)
+
+    const sendProfile = {
+        name: userName,
+        email: userEmail
+    }
+
 // set profile to object
 // JSON Parse session to get data and pass the data
 let userIcon = `<img class="user-icon-img"  src='${sessionStorage.getItem('userimage')}' alt='user_img' />        `;        
@@ -27,9 +34,14 @@ let userIcon = `<img class="user-icon-img"  src='${sessionStorage.getItem('useri
         let registerBtn = document.querySelector('#register-btn')        
         let user = document.querySelector('.user');
 
-        sessionStorage.setItem('username', `${userName}`);
-        sessionStorage.setItem('useremail', `${userEmail}`);
-        sessionStorage.setItem('userimage', `${userImg}`);
+        // sessionStorage.setItem('username', `${userName}`);
+        // sessionStorage.setItem('useremail', `${userEmail}`);
+        // sessionStorage.setItem('userimage', `${userImg}`);
+
+        const jsonProfile = JSON.stringify(sendProfile)
+        const xhr = new XMLHttpRequest()
+        xhr.open("POST", 'insertUser.php')
+        xhr.send(jsonProfile)
 
         
         loginBtn.classList.add('hide');        
