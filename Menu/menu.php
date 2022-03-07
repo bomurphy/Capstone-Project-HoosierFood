@@ -38,7 +38,7 @@ if(isset($_POST['search']))
     
 }
  else {
-    $query = "SELECT * FROM `filter`";
+    $query = "SELECT * FROM `menus`";
     $search_result = filterTable($query);
 }
 
@@ -69,40 +69,22 @@ function filterTable($query)
 		
 		<table>
                 <tr>
-                    <th>Pizza</th>
-                    <th>Wings</th>
-                    <th>Fast Food</th>
-                    <th>Bar & Grill</th>
-					<th>Mexican Food</th>
-                    <th>Indian Food</th>
-                    <th>Chinese Food</th>
-                    <th>Sweets</th>
-					<th>Breakfast/Brunch</th>
-                    <th>Thai Food</th>
-                    <th>Italian</th>
+                    <th>Restaurant</th>
+                    <th>Menu URL</th>
                 </tr>
 		</table>
 		<br>
 		<br>
-        <form action="filter.php" method="post">
+        <form action="menu.php" method="post">
             <input type="text" name="valueToSearch" placeholder="Value To Search"><br><br>
             <input type="submit" name="search" value="Filter"><br><br>
             
             <table>
-                <tr>
-                    <th>Food Type</th>
-                    <th>Restaurant Food</th>
-                    <th>Picture</th>
-                    <th>Phone Number</th>
-                </tr>
-
       <!-- populate table from mysql database -->
                 <?php while($row = mysqli_fetch_array($search_result)):?>
                 <tr>
-                    <td><?php echo $row['type'];?></td>
                     <td><?php echo $row['RestaurantName'];?></td>
-                    <td><?php echo $row['PictureURL'];?></td>
-                    <td><?php echo $row['PhoneNum'];?></td>
+                    <td><?php echo $row['menuURL'];?></td>
                 </tr>
                 <?php endwhile;?>
             </table>
