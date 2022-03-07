@@ -41,6 +41,7 @@ let userIcon = `<img class="user-icon-img"  src='${sessionStorage.getItem('useri
         const jsonProfile = JSON.stringify(sendProfile)
         const xhr = new XMLHttpRequest()
         xhr.open("POST", 'insertUser.php')
+        xhr.setRequestHeader("Content-Type", "application/json")
         xhr.send(jsonProfile)
 
         
