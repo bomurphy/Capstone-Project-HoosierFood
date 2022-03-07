@@ -21,10 +21,10 @@ function onSignIn(googleUser) {
     var id_token = googleUser.getAuthResponse().id_token;
     // console.log(userName)
 
-    // const sendProfile = {
-    //     name: userName,
-    //     email: userEmail
-    // }
+    const sendProfile = {
+        name: userName,
+        email: userEmail
+    }
 
 // set profile to object
 // JSON Parse session to get data and pass the data
@@ -40,11 +40,8 @@ let userIcon = `<img class="user-icon-img"  src='${sessionStorage.getItem('useri
         sessionStorage.setItem('useremail', `${userEmail}`);
         sessionStorage.setItem('userimage', `${userImg}`);
 
-        // const jsonProfile = JSON.stringify(sendProfile)
-        // const xhr = new XMLHttpRequest()
-        // xhr.open("POST", 'insertUser.php')
-        // xhr.setRequestHeader("Content-Type", "application/json")
-        // xhr.send(jsonProfile)
+        const jsonProfile = JSON.stringify(sendProfile)
+        
 
         var xhr = new XMLHttpRequest();
         xhr.open('POST', 'https://cgi.luddy.indiana.edu/~team51/Login/insertUser.php');
@@ -53,6 +50,8 @@ let userIcon = `<img class="user-icon-img"  src='${sessionStorage.getItem('useri
             console.log('Signed in as: ' + xhr.responseText);
         };
         xhr.send('idtoken=' + id_token);
+        xhr.send(jsonProfile)
+
 
         
         // loginBtn.classList.add('hide');        

@@ -15,18 +15,18 @@
             $userid = $payload['sub'];
             {echo "connected";}
             {echo $userid;}
+            $requestData = file_get_contents("php://input");
+            var_dump($requestData);
+    
+            $object = json_decode($requestData);
+            $var_name = mysqli_real_escape_string($connect, $_POST['name']);
+            $var_email = mysqli_real_escape_string($connect, $_POST['email']);
+    
+            $sql = "INSERT INTO users (FirstName, Email) VALUES ('$var_name', $var_email)";
         } else {
             {echo "failed";}
         }
 
 
-        // $requestData = file_get_contents("php://input");
-        // var_dump($requestData);
-
-        // $object = json_decode($requestData);
-        // $var_name = mysqli_real_escape_string($connect, $_POST['name']);
-        // $var_email = mysqli_real_escape_string($connect, $_POST['email']);
-
-        // $sql = "INSERT INTO users (FirstName, Email) VALUES ('$var_name', $var_email)";
     }
 ?>
