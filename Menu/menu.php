@@ -84,7 +84,9 @@ function filterTable($query)
                 <?php while($row = mysqli_fetch_array($search_result)):?>
                 <tr>
                     <td><?php echo $row['RestaurantName'];?></td>
-                    <td><?php echo $row['menuURL'];?></td>
+                    <td><?php
+                        $HTML = "<a href=".$row['menuURL'].">"."</a>";
+                    ?></td>
                 </tr>
                 <?php endwhile;?>
             </table>
