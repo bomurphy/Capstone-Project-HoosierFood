@@ -31,7 +31,7 @@ function onSignIn(googleUser) {
 let userIcon = `<img class="user-icon-img"  src='${sessionStorage.getItem('userimage')}' alt='user_img' />        `;        
 
     if  (profile != "" || profile != undefined || profile != null) {  
-        // window.location.href = 'https://cgi.luddy.indiana.edu/~team51/Restaurant/restaurant.html'
+        window.location.href = 'https://cgi.luddy.indiana.edu/~team51/Restaurant/restaurant.html'
         let loginBtn = document.querySelector('#login-btn')        
         let registerBtn = document.querySelector('#register-btn')        
         let user = document.querySelector('.user');
