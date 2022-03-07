@@ -57,7 +57,9 @@ function filterTable($query)
     <head>
         <title>Menu</title>
         <style>
-   
+            body {
+                background-color: beige;
+            }
         </style>
     </head>
     <body>
@@ -82,7 +84,7 @@ function filterTable($query)
                 <tr>
                     <td><?php echo $row['RestaurantName'];?></td>
                     <td><?php
-                        $HTML = "<a href=".$row['menuURL'].">"."</a>";
+                        $HTML = "<a href=".$row['menuURL'].">"."Link"."</a>";
                         echo $HTML;
                     ?></td>
                 </tr>
