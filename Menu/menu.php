@@ -71,6 +71,7 @@ function filterTable($query)
 
             form {
                 margin-bottom: 2.5rem;
+                padding: 0 1rem;
             }
         </style>
     </head>
@@ -112,32 +113,21 @@ function filterTable($query)
                 
                 <a href="https://cgi.luddy.indiana.edu/~team51/Register/register.php" id="register-btn" class="login">Register</button></a>
                 <button class="signOutBtn login hide">Sign Out</button> -->
-                <a href="#" onclick="signOut();"><button class="login signOutBtn">Sign Out</button></a>
             </form>
           </div>
         </div>
       </nav>
-		<h2>Restaurant Menus</h2>
-		
-		<table>
-                <tr>
-                    <th>Restaurant</th>
-                    <th>Menu URL</th>
-                </tr>
-		</table>
-		<br>
+		<h2 class="red-text">Restaurant Menus</h2>
 		<br>
         <form action="menu.php" method="post">
-            <input type="text" name="valueToSearch" placeholder="Value To Search"><br><br>
-            <input type="submit" name="search" value="Filter"><br><br>
             
-            <table class="p-5">
+            <table class="p-3">
       <!-- populate table from mysql database -->
                 <?php while($row = mysqli_fetch_array($search_result)):?>
                 <tr>
-                    <td><?php echo $row['RestaurantName'];?></td>
+                    <td><?php echo "<div class='red-text'>". $row['RestaurantName']."</div>";?></td>
                     <td><?php
-                        $HTML = "<a href=".$row['menuURL'].">".$row['menuURL']."</a>";
+                        $HTML = "<a class='red-text menu-links' href=".$row['menuURL'].">".$row['menuURL']."</a>";
                         echo $HTML;
                     ?></td>
                 </tr>

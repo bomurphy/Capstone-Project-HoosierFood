@@ -26,6 +26,10 @@
     font-size: 3rem;
 }
 
+.menu-links {
+    text-decoration: none;
+}
+
 .red-text {
     color: #990000;
 }
@@ -111,6 +115,7 @@ h1{
   font-size: 16px;
 }
 	
+
 	
 	
 	
