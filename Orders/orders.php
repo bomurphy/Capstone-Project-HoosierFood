@@ -47,11 +47,11 @@
               <button class="btn btn-outline-danger me-1">Login</button>
               <button class="btn btn-outline-danger" type="submit">Register</button>
             </form> -->
-            <form action="" class="d-flex">
+            <!-- <form action="" class="d-flex">
                 <button id="login-btn" class="login me-2">Login</button>
                 <a href='../UserProfile/user-profile.html' class="user hide"></a>
                 <a href="https://cgi.luddy.indiana.edu/~team51/Register/register.php" id="register-btn" class="login">Register</button></a>
-                <button class="signOutBtn login hide">Sign Out</button>
+                <button class="signOutBtn login hide">Sign Out</button> -->
             </form>
           </div>
         </div>
