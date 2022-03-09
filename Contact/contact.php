@@ -59,7 +59,7 @@
                 
                 <a href="https://cgi.luddy.indiana.edu/~team51/Register/register.php" id="register-btn" class="login">Register</button></a>
                 <button class="signOutBtn login hide">Sign Out</button>--> 
-                <a href="#" onclick="signOut();"><button class="login signOutBtn">Sign Out</button></a>
+                <!-- <a href="#" onclick="signOut();"><button class="login signOutBtn">Sign Out</button></a> -->
             </form> 
           </div>
         </div>
