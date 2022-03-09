@@ -104,6 +104,9 @@ function filterTable($query)
                 <a class="nav-link red-text" href="../Menu/menu.php" tabindex="-1" aria-disabled="true">Menus</a>  
               </li>
               <li class="nav-item">
+                <a class="nav-link red-text" href="../Favorites/fav.php" tabindex="-1" aria-disabled="true">Favorites</a>  
+              </li>
+              <li class="nav-item">
                 <a class="nav-link red-text" href="#" tabindex="-1" aria-disabled="true">Support</a>
               </li>
             </ul>
@@ -147,7 +150,7 @@ function filterTable($query)
         <footer class="footer-bg d-flex align-items-center position-fixed bottom-0 justify-content-end w-100 p-2">
         <div class="mt-3 d-flex">
             <a href="" class="me-3 footer-link">Rewards</a>
-            <a href="" class="me-3 footer-link">Contact</a>
+            <a href="../Contact/contact.php" class="me-3 footer-link">Contact</a>
         </div>
      
       </footer>
