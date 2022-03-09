@@ -4,7 +4,6 @@ if(isset($_POST['search']))
 {
     $valueToSearch = $_POST['valueToSearch'];
     // search in all table columns
-    // using concat mysql function
     $query = "SELECT * FROM `filter` WHERE (`type`) LIKE '%".$valueToSearch."%'";
     $search_result = filterTable($query);
     
@@ -27,19 +26,73 @@ function filterTable($query)
 <!DOCTYPE html>
 <html>
     <head>
-        <title>PHP HTML TABLE DATA SEARCH</title>
+        <title>FilterFeature</title>
         <style>
-            table,tr,th,td
+			H1 
+			{ 
+				text-align: center;
+				color: #990000;
+				
+			}
+			
+			 table,tr
             {
                 border: 1px solid black;
+				width: 98%;
+				border-collapse: collapse;
+				margin:20px;				
             }
+			
+			#FoodCategories th 
+			{
+				background-color: #990000;
+				color: beige;
+				padding: 15px;
+				border: 2px solid black;
+			}
+			
+			#dataTable th
+			{
+				border: 3px solid;
+				border-color: black;
+				color: beige;
+				background-color: #990000;
+				
+			}
+			
+			#dataTable td {
+				text-align: left;
+				border: 1px solid;
+				border-color: black;
+				color: beige;
+				background-color: #990000;
+				padding: 8px;
+			}
+			
+			p {
+				color: black;
+				font-weight: bold;
+				text-transform: uppercase;
+				margin-left:20px;
+				color: #990000;
+			}
+			
+			#Value {
+				margin-left:20px;
+			}
+		
+			#Click  {
+				margin-left:20px;
+				margin-top:10px;
+			}
+			
         </style>
     </head>
-    <body>
+    <body style= "background-color:beige;">
         
-		<h2> Food Types</h2>
+		<h1> Food Types </h1>
 		
-		<table>
+		<table id="FoodCategories">
                 <tr>
                     <th>Pizza</th>
                     <th>Wings</th>
@@ -54,13 +107,13 @@ function filterTable($query)
                     <th>Italian</th>
                 </tr>
 		</table>
-		<br>
-		<br>
         <form action="filter.php" method="post">
-            <input type="text" name="valueToSearch" placeholder="Value To Search"><br><br>
-            <input type="submit" name="search" value="Filter"><br><br>
+            <input id="Value" type="text" name="valueToSearch" placeholder="Food Type Search"><br>
+            <input id="Click" type="submit" name="search" value="Filter">
+			
+			<p>Click Filter button for All Restaurants</p>
             
-            <table>
+            <table id="dataTable">
                 <tr>
                     <th>Food Type</th>
                     <th>Restaurant Food</th>
