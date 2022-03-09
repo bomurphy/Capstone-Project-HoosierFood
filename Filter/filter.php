@@ -93,7 +93,7 @@ function filterTable($query)
 ?>
 
         
-		<h1> Food Types </h1>
+		<h1 class="red-text">Food Types</h1>
 		
 		<table id="FoodCategories">
                 <tr>
