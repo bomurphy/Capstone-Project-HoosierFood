@@ -8,8 +8,8 @@
         content="1027531663911-al3p7o7qrb5eqdpq6j3ea1mn63tvg5jc.apps.googleusercontent.com">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="filter.css" >
-    <title>Orders</title>
+    <link rel="stylesheet" href="favorite.css" >
+    <title>Favorites List</title>
     
 </head>
 <body class="nav-background">
@@ -59,88 +59,36 @@
           </div>
         </div>
       </nav>
-	  
-	  
-	  
-	  
-	  
-	  <?php
 
-if(isset($_POST['search']))
-{
-    $valueToSearch = $_POST['valueToSearch'];
-    // search in all table columns
-    $query = "SELECT * FROM `filter` WHERE (`type`) LIKE '%".$valueToSearch."%'";
-    $search_result = filterTable($query);
-    
-}
- else {
-    $query = "SELECT * FROM `filter`";
-    $search_result = filterTable($query);
+
+
+
+<?php
+
+// Create connection
+$conn =mysqli_connect("db.soic.indiana.edu", "i494f21_team51", "my+sql=i494f21_team51", "i494f21_team51");
+// Check connection
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
 }
 
-// function to connect and execute the query
-function filterTable($query)
-{
-    $connect = mysqli_connect("db.soic.indiana.edu", "i494f21_team51", "my+sql=i494f21_team51", "i494f21_team51");
-    $filter_Result = mysqli_query($connect, $query);
-    return $filter_Result;
+$sql = "SELECT Favid, restName FROM FavRestaurants";
+$result = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($result) > 0) {
+  // output data of each row
+  while($row = mysqli_fetch_assoc($result)) {
+    echo "Restaurant Name: " . $row["restName"]. "<br>";
+  }
+} else {
+  echo "0 results";
 }
 
+mysqli_close($conn);
 ?>
 
-        
-		<h1> Choose Food Types </h1>
-		
-		<table id="FoodCategories">
-                <tr>
-                    <th>Pizza</th>
-                    <th>Wings</th>
-                    <th>Fast Food</th>
-                    <th>Bar & Grill</th>
-					<th>Mexican Food</th>
-                    <th>Indian Food</th>
-                    <th>Chinese Food</th>
-                    <th>Sweets</th>
-					<th>Breakfast/Brunch</th>
-                    <th>Thai Food</th>
-                    <th>Italian</th>
-					<th>Diner</th>
-                    <th>Sanwiches</th>
-                    <th>Japanese Food</th>
-                </tr>
-		</table>
-        <form action="filter.php" method="post">
-            <input id="Value" type="text" name="valueToSearch" placeholder="Food Type Search"><br>
-            <input id="Click" type="submit" name="search" value="Filter">
-			<br>
-			<p>Click Filter button for All Restaurants</p>
-            
-            <table id="dataTable">
-                <tr>
-                    <th>Food Type</th>
-                    <th>Restaurant Food</th>
-                    <th>Picture</th>
-                    <th>Phone Number</th>
-                </tr>
 
-      <!-- populate table from mysql database -->
-                <?php while($row = mysqli_fetch_array($search_result)):?>
-                <tr>
-                    <td><?php echo $row['type'];?></td>
-                    <td><?php echo $row['RestaurantName'];?></td>
-                    <td><?php echo $row['PictureURL'];?></td>
-                    <td><?php echo $row['PhoneNum'];?></td>
-                </tr>
-                <?php endwhile;?>
-            </table>
-        </form>
-        <br>
-    </body>
-</html>	  
-	  
-	  
-	        <footer class="footer-bg d-flex align-items-center position-fixed bottom-0 justify-content-end w-100 p-2">
+ <footer class="footer-bg d-flex align-items-center position-fixed bottom-0 justify-content-end w-100 p-2">
         <div class="mt-3 d-flex">
             <a href="" class="me-3 footer-link">Rewards</a>
             <a href="" class="me-3 footer-link">Contact</a>
