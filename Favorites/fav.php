@@ -33,7 +33,7 @@
                 <a class="nav-link red-text" href="#" tabindex="-1" aria-disabled="true">Reviews</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link red-text" href="../Filter/filter1.html" tabindex="-1" aria-disabled="true">Discovery</a>
+                <a class="nav-link red-text" href="../Filter/filter.php" tabindex="-1" aria-disabled="true">Discovery</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link red-text" href="../Menu/menu.php" tabindex="-1" aria-disabled="true">Menus</a>  
@@ -61,7 +61,7 @@
         </div>
       </nav>
 	  
-		
+		<div class="session">
                 <?php  
                 if(isset($_SESSION['status']))
                 {
@@ -69,11 +69,10 @@
                     unset($_SESSION['status']);
                 }
                 ?>
-                    <div class="card-header">
-                        <h4>Add to your Favorites List</h4>
-                    </div>
+                  <div class="card-header">
+                      <h4>Add to your Favorites List</h4>
+                  </div>
                     <div class="card-body">
-
                         <form action="code1.php" method="POST">
                         <?php
                             $con = mysqli_connect("db.soic.indiana.edu", "i494f21_team51", "my+sql=i494f21_team51", "i494f21_team51");
@@ -104,11 +103,12 @@
 						<br>
 						<br>
 					</div>
+		</div>
 
            <footer class="footer-bg d-flex align-items-center position-fixed bottom-0 justify-content-end w-100 p-2">
         <div class="mt-3 d-flex">
             <a href="" class="me-3 footer-link">Rewards</a>
-            <a href="" class="me-3 footer-link">Contact</a>
+            <a href="../Contact/contact.php" class="me-3 footer-link">Contact</a>
         </div>
      
       </footer>

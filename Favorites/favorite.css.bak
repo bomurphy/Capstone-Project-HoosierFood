@@ -1,7 +1,8 @@
-.records {
-		color: #990000;
+#checks
+{ 
+	text-align: center;
+	color: #990000;
 }
-
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 

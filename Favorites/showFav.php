@@ -32,7 +32,7 @@
                 <a class="nav-link red-text" href="#" tabindex="-1" aria-disabled="true">Reviews</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link red-text" href="../Filter/filter1.html" tabindex="-1" aria-disabled="true">Discovery</a>
+                <a class="nav-link red-text" href="../Filter/filter.php" tabindex="-1" aria-disabled="true">Discovery</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link red-text" href="../Menu/menu.php" tabindex="-1" aria-disabled="true">Menus</a>  
@@ -61,37 +61,38 @@
       </nav>
 
 
+	<h1>Your Favorites</h1>
+	
+		<?php
 
+		// Create connection
+		$conn =mysqli_connect("db.soic.indiana.edu", "i494f21_team51", "my+sql=i494f21_team51", "i494f21_team51");
+		// Check connection
+		if (!$conn) {
+		  die("Connection failed: " . mysqli_connect_error());
+		}
 
-<?php
+		$sql = "SELECT Favid, restName FROM FavRestaurants";
+		$result = mysqli_query($conn, $sql);
 
-// Create connection
-$conn =mysqli_connect("db.soic.indiana.edu", "i494f21_team51", "my+sql=i494f21_team51", "i494f21_team51");
-// Check connection
-if (!$conn) {
-  die("Connection failed: " . mysqli_connect_error());
-}
+		if (mysqli_num_rows($result) > 0) {
+		  // output data of each row
+		  while($row = mysqli_fetch_assoc($result)) {
+			echo "Restaurant Name: " . $row["restName"]. "<br>";
+		  }
+		} else {
+		  echo "0 results";
+		}
 
-$sql = "SELECT Favid, restName FROM FavRestaurants";
-$result = mysqli_query($conn, $sql);
-
-if (mysqli_num_rows($result) > 0) {
-  // output data of each row
-  while($row = mysqli_fetch_assoc($result)) {
-    echo "Restaurant Name: " . $row["restName"]. "<br>";
-  }
-} else {
-  echo "0 results";
-}
-
-mysqli_close($conn);
-?>
+		mysqli_close($conn);
+		?>
+	
 
 
  <footer class="footer-bg d-flex align-items-center position-fixed bottom-0 justify-content-end w-100 p-2">
         <div class="mt-3 d-flex">
             <a href="" class="me-3 footer-link">Rewards</a>
-            <a href="" class="me-3 footer-link">Contact</a>
+            <a href="../Contact/contact.php" class="me-3 footer-link">Contact</a>
         </div>
      
       </footer>
