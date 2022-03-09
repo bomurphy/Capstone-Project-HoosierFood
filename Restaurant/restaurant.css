@@ -18,6 +18,13 @@
     width: 50px;
 }
 
+.user-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: .1rem;
+}
+
 .hide {
     display: none;
 }
@@ -85,7 +92,7 @@ h1{
     padding: 20px;
     border: 2px solid black;
 	text-align: center;
-	height: 250px;
+	height: 300px;
 }  
 .float-child2 {
 	background-color: #990000;
@@ -97,7 +104,7 @@ h1{
     float: left;
     padding: 20px;
     border: 2px solid black;
-	height: 250px;
+	height: 300px;
 }  
 
 .button {

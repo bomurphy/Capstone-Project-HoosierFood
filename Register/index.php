@@ -81,7 +81,7 @@ if(isset($_POST['submit']))
      if (mysqli_query($con, $sql)) {
         echo "Congratulations you are all signed up! Click the button below to login with your information:";
      } else {
-        echo "Error: " . $sql . ":-" . mysqli_error($conn);
+        echo "Error: Please return to home page". mysqli_error($con);
      }
      mysqli_close($conn);
 }
