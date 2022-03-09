@@ -8,8 +8,8 @@
         content="1027531663911-al3p7o7qrb5eqdpq6j3ea1mn63tvg5jc.apps.googleusercontent.com">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="orders.css" >
-    <title>Orders</title>
+    <link rel="stylesheet" href="contact.css" >
+    <title>Contact</title>
     
 </head>
 <body class="nav-background">
@@ -51,11 +51,13 @@
               <button class="btn btn-outline-danger" type="submit">Register</button>
             </form> -->
             <!-- <form action="" class="d-flex">
-                <button id="login-btn" class="login me-2">Login</button>
-                <a href='../UserProfile/user-profile.html' class="user hide"></a>
+              <a href='../UserProfile/user-profile.html' class="user hide"></a>
+                 <button id="login-btn" class="login me-2">Login</button>
+                
                 <a href="https://cgi.luddy.indiana.edu/~team51/Register/register.php" id="register-btn" class="login">Register</button></a>
-                <button class="signOutBtn login hide">Sign Out</button> -->
-            </form>
+                <button class="signOutBtn login hide">Sign Out</button>--> 
+                <a href="#" onclick="signOut();"><button class="login signOutBtn">Sign Out</button></a>
+            </form> 
           </div>
         </div>
       </nav>
