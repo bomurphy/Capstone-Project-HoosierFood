@@ -65,48 +65,94 @@
 	  
 	  
 	  
-<form action="config.php" method="post">
-	<div class="elem-group">
-		<label for="name">Your Name</label>
-		<input type="text" id="name" name="visitor_name" placeholder="John Doe" pattern=[A-Z\sa-z]{3,20} required>
-	</div>
-	<div class="elem-group">
-		<label for="email">Your E-mail</label>
-		<input type="email" id="email" name="visitor_email" placeholder="john.doe@email.com" required>
-	</div>
-	<div class="elem-group">
-    <label for="admin-selection">Choose Administrator</label>
-		<select id="admin-selection" name="admin" required>
-			<option value="">Select an Administrator</option>
-			<option value="Finn">Finn McSweeney</option>
-			<option value="Luke">Luke Faccenda</option>
-			<option value="Bowen">Bowen Murphy</option>
-			<option value="Jack">Jack Rebman</option>
-		</select>
-	</div>
-	<div class="elem-group">
-		<label for="title">Reason For Contacting Us</label>
-		<input type="text" id="title" name="email_title" placeholder="Unable to Reset my Password">
-	</div>
-	<div class="elem-group">
-		<label for="message">Write your message</label>
-		<textarea id="message" name="visitor_message" placeholder="Say whatever you want." required></textarea>
-	</div>
-	<button type="submit">Send Message</button>
-</form>
+<?php
+  
+if($_POST) {
+    $visitor_name = "";
+    $visitor_email = "";
+    $email_title = "";
+    $admin = "";
+    $visitor_message = "";
+    $email_body = "<div>";
+      
+    if(isset($_POST['visitor_name'])) {
+        $visitor_name = filter_var($_POST['visitor_name'], FILTER_SANITIZE_STRING);
+        $email_body .= "<div>
+                           <label><b>Visitor Name:</b></label>&nbsp;<span>".$visitor_name."</span>
+                        </div>";
+    }
+ 
+    if(isset($_POST['visitor_email'])) {
+        $visitor_email = str_replace(array("\r", "\n", "%0a", "%0d"), '', $_POST['visitor_email']);
+        $visitor_email = filter_var($visitor_email, FILTER_VALIDATE_EMAIL);
+        $email_body .= "<div>
+                           <label><b>Visitor Email:</b></label>&nbsp;<span>".$visitor_email."</span>
+                        </div>";
+    }
+      
+    if(isset($_POST['email_title'])) {
+        $email_title = filter_var($_POST['email_title'], FILTER_SANITIZE_STRING);
+        $email_body .= "<div>
+                           <label><b>Reason For Contacting Us:</b></label>&nbsp;<span>".$email_title."</span>
+                        </div>";
+    }
+      
+    if(isset($_POST['admin'])) {
+        $admin = filter_var($_POST['admin'], FILTER_SANITIZE_STRING);
+        $email_body .= "<div>
+                           <label><b>Concerned Department:</b></label>&nbsp;<span>".$admin."</span>
+                        </div>";
+    }
+      
+    if(isset($_POST['visitor_message'])) {
+        $visitor_message = htmlspecialchars($_POST['visitor_message']);
+        $email_body .= "<div>
+                           <label><b>Visitor Message:</b></label>
+                           <div>".$visitor_message."</div>
+                        </div>";
+    }
+      
+    if($admin == "Finn") {
+        $recipient = "fmcsween@iu.edu";
+    }
+    else if($admin == "Luke") {
+        $recipient = "lfaccend@iu.edu";
+    }
+    else if($admin == "Bowen") {
+        $recipient = "bomurphy@iu.edu";
+    }
+    else {
+        $recipient = "jrebman@iu.edu";
+    }
+      
+    $email_body .= "</div>";
+ 
+    $headers  = 'MIME-Version: 1.0' . "\r\n"
+    .'Content-type: text/html; charset=utf-8' . "\r\n"
+    .'From: ' . $visitor_email . "\r\n";
+      
+    if(mail($recipient, $email_title, $email_body, $headers)) {
+        echo "<p>Thank you for contacting us, $visitor_name. You will get a reply within 24 hours.</p>";
+    } else {
+        echo '<p>We are sorry but the email did not go through.</p>';
+    }
+      
+} else {
+    echo '<p>Something went wrong</p>';
+}
+?>  
 	  
 	  
 	  
 	  
 	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
+<form method="POST" action="../Contact/contact.php">
+    <input type="submit" value = "Submit another request" class="button">
+</form>  
+</br>
+<form method="POST" action="../Restaurant/restaurant.html">
+    <input type="submit" value = "Return to Home Page" class="button">
+</form>  
 	  
 	  
 	  
@@ -142,3 +188,4 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>
 </html>
+
