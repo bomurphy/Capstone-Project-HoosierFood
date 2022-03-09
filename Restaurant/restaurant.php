@@ -32,7 +32,7 @@
                 <a class="nav-link red-text" href="#" tabindex="-1" aria-disabled="true">Reviews</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link red-text" href="../Filter/filter1.html" tabindex="-1" aria-disabled="true">Discovery</a>
+                <a class="nav-link red-text" href="../Filter/filter.php" tabindex="-1" aria-disabled="true">Discovery</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link red-text" href="../Menu/menu.php" tabindex="-1" aria-disabled="true">Menus</a>  
