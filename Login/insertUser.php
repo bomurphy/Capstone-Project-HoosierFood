@@ -7,7 +7,8 @@
         die("Failed to connect to server: " . mysqli_connect_error());
     } else {
         $CLIENT_ID="1027531663911-al3p7o7qrb5eqdpq6j3ea1mn63tvg5jc.apps.googleusercontent.com";
-        $id_token=$_GET['idtoken'];
+        $id_token=$_POST['idtoken'];
+        echo $id_token;
         $client = new Google_Client(['client_id' => $CLIENT_ID]);
         $payload = $client->verifyIdToken($id_token);
 
