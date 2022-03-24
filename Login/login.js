@@ -49,7 +49,8 @@ let userIcon = `<img class="user-icon-img"  src='${sessionStorage.getItem('useri
         xhr.onload = function() {
             console.log('Signed in as: ' + xhr.responseText);
         };
-        xhr.send('idtoken=' + id_token, jsonProfile);
+        //xhr.send('idtoken=' + id_token, jsonProfile);
+        xhr.send('idtoken=' + id_token);
 
 
         
