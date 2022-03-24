@@ -14,8 +14,10 @@
 
         if ($payload) {
             $userid = $payload['sub'];
-            echo "connected";
-            echo $username;
+            //echo "connected";
+            $email = $payload['email'];
+            $firstname = $payload['given_name'];
+            $lastname=$payload['family_name'];
             //$requestData = file_get_contents("php://input");
             //var_dump($requestData);
     
@@ -23,7 +25,14 @@
             //$var_name = mysqli_real_escape_string($connect, $object['name']);
             //$var_email = mysqli_real_escape_string($connect, $object['email']);
     
-            //$sql = "INSERT INTO users (FirstName, Email) VALUES ('$var_name', $var_email)";
+            $sql = "INSERT INTO users(FirstName, LastName, Email) VALUES ('$firstname','$lastname','$email')";
+            echo $sql;
+            if($connect->query($sql)==TRUE){
+                echo "User Inserted into DB";
+            }
+            else{
+                echo "Error".$connect->error;
+            }
         } else {
             {echo "failed";}
         }
