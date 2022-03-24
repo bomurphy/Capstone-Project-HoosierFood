@@ -14,7 +14,7 @@
         if ($payload) {
             $userid = $payload['sub'];
             {echo "connected";}
-            {echo $userid;}
+            {echo $username;}
             $requestData = file_get_contents("php://input");
             var_dump($requestData);
     
