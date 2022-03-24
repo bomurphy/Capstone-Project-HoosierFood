@@ -25,10 +25,11 @@
             //$var_name = mysqli_real_escape_string($connect, $object['name']);
             //$var_email = mysqli_real_escape_string($connect, $object['email']);
     
-            $sql = "INSERT INTO users(FirstName, LastName, Email) VALUES ('$firstname','$lastname','$email')";
-            echo $sql;
+            $sql = "INSERT INTO users(FirstName, LastName, Street, City, State, Zip, Email) VALUES ('$firstname','$lastname',NULL,NULL,NULL,NULL,'$email')";
+            //echo $sql;
             if($connect->query($sql)==TRUE){
                 echo "User Inserted into DB";
+                
             }
             else{
                 echo "Error".$connect->error;
