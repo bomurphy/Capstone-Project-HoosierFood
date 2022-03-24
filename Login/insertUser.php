@@ -14,14 +14,14 @@
             $userid = $payload['sub'];
             echo "connected";
             echo $username;
-            $requestData = file_get_contents("php://input");
-            var_dump($requestData);
+            //$requestData = file_get_contents("php://input");
+            //var_dump($requestData);
     
-            $object = json_decode($requestData);
-            $var_name = mysqli_real_escape_string($connect, $object['name']);
-            $var_email = mysqli_real_escape_string($connect, $object['email']);
+            //$object = json_decode($requestData);
+            //$var_name = mysqli_real_escape_string($connect, $object['name']);
+            //$var_email = mysqli_real_escape_string($connect, $object['email']);
     
-            $sql = "INSERT INTO users (FirstName, Email) VALUES ('$var_name', $var_email)";
+            //$sql = "INSERT INTO users (FirstName, Email) VALUES ('$var_name', $var_email)";
         } else {
             {echo "failed";}
         }
