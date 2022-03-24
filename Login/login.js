@@ -32,13 +32,13 @@ function onSignIn(googleUser) {
 
     if  (profile != "" || profile != undefined || profile != null) {  
          window.location.href = 'https://cgi.luddy.indiana.edu/~team51/Restaurant/restaurant.html'
-        // let loginBtn = document.querySelector('#login-btn')        
-        // let registerBtn = document.querySelector('#register-btn')        
-        //let user = document.querySelector('.user');
+         let loginBtn = document.querySelector('#login-btn')        
+         let registerBtn = document.querySelector('#register-btn')        
+         let user = document.querySelector('.user');
 
-        //sessionStorage.setItem('username', `${userName}`);
-        //sessionStorage.setItem('useremail', `${userEmail}`);
-        //sessionStorage.setItem('userimage', `${userImg}`);
+        sessionStorage.setItem('username', `${userName}`);
+        sessionStorage.setItem('useremail', `${userEmail}`);
+        sessionStorage.setItem('userimage', `${userImg}`);
 
         //const jsonProfile = JSON.stringify(sendProfile)
         
