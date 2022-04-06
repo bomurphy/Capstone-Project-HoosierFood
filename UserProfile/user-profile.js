@@ -1,12 +1,7 @@
 let user = document.querySelector('.user')
 let userNameCont = document.querySelector('.name');
 let userEmailCont = document.querySelector('.email');
-let city = document.querySelector('.city').innerHTML
-let street = document.querySelector('.street').innerHTML
-let state = document.querySelector('.state').innerHTML
-let zip = document.querySelector('.zip').innerHTML
-let button = document.querySelector('.updateBtn')
-let infoCont = document.querySelector('.info-container')
+
 
 if (sessionStorage.getItem('useremail') != '' || sessionStorage.getItem('useremail') != undefined || sessionStorage.getItem('useremail') != null) {
     user.classList.remove('hide')
