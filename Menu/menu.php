@@ -70,7 +70,6 @@ function filterTable($query)
             }
 
             form {
-                margin-bottom: 2.5rem;
                 padding: 0 1rem;
             }
 
