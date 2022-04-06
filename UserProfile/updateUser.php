@@ -1,5 +1,7 @@
 <?php 
 
+session_start();
+
 $connect = mysqli_connect("db.sice.indiana.edu", "i494f21_team51", "my+sql=i494f21_team51", "i494f21_team51");
 
 if (!$connect) {
@@ -9,7 +11,7 @@ if (!$connect) {
     $city = mysqli_real_escape_string($connect, $_POST['city']);
     $zip = mysqli_real_escape_string($connect, $_POST['zip']);
     $state = mysqli_real_escape_string($connect, $_POST['state']);
-    $email = mysqli_real_escape_string($connect, $_POST['email']);
+    $email = $_SESSION['useremail'];
 
     $sql = "UPDATE users SET Street='$street', City='$city', State='$state', Zip='$zip' WHERE Email='$email' ";
 
