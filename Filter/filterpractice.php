@@ -8,8 +8,8 @@
         content="1027531663911-al3p7o7qrb5eqdpq6j3ea1mn63tvg5jc.apps.googleusercontent.com">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="restaurant.css" >
-    <title>Hoosier Food Home Page</title>
+    <link rel="stylesheet" href="filter.css" >
+    <title>FilterPage</title>
     
 </head>
 <body class="nav-background">
@@ -32,13 +32,10 @@
                 <a class="nav-link red-text" href="#" tabindex="-1" aria-disabled="true">Reviews</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link red-text" href="../Filter/filterpractice.php" tabindex="-1" aria-disabled="true">Discovery</a>
+                <a class="nav-link red-text" href="../Filter/filter.php" tabindex="-1" aria-disabled="true">Discovery</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link red-text" href="../Menu/menu.php" tabindex="-1" aria-disabled="true">Menus</a>  
-              </li>
-              <li class="nav-item">
-                <a class="nav-link red-text" href="../Favorites/fav.php" tabindex="-1" aria-disabled="true">Favorites</a>  
               </li>
               <li class="nav-item">
                 <a class="nav-link red-text" href="#" tabindex="-1" aria-disabled="true">Support</a>
@@ -54,98 +51,85 @@
               <button class="btn btn-outline-danger" type="submit">Register</button>
             </form> -->
             <!-- <form action="" class="d-flex">
-              <a href='../UserProfile/user-profile.html' class="user hide"></a>
-                 <button id="login-btn" class="login me-2">Login</button>
-                
+                <button id="login-btn" class="login me-2">Login</button>
+                <a href='../UserProfile/user-profile.html' class="user hide"></a>
                 <a href="https://cgi.luddy.indiana.edu/~team51/Register/register.php" id="register-btn" class="login">Register</button></a>
-                <button class="signOutBtn login hide">Sign Out</button>--> 
-                <a href="#" onclick="signOut();"><button class="login signOutBtn">Sign Out</button></a>
-            </form> 
+                <button class="signOutBtn login hide">Sign Out</button> -->
+            </form>
           </div>
         </div>
       </nav>
-	  
-	<h1 class="red-text">Hoosier Food</h1>
-	<div class="choice">
+
+
+<h1> Choose Food Types </h1>
+
+
+<form action="filterpractice.php">
+  <label for="categories">Choose a Food Type:</label>
+  <select name="category" id="FoodCategories">
+    <option value="Pizza">Pizza</option>
+    <option value="Wings">Wings</option>
+    <option value="Fast Food">Fast Food</option>
+    <option value="Bar & Grill">Bar & Grill</option>
+	<option value="Mexican Food">Mexican Food</option>
+    <option value="Indian Food">Indian Food</option>
+    <option value="Chinese Food">Chinese Food</option>
+    <option value="Sweets">Sweets</option>
+	<option value="Breakfast/Brunch">Breakfast/Brunch</option>
+	<option value="Thai Food">Thai Food</option>
+    <option value="Italian">Italian</option>
+    <option value="sandwiches">sandwiches</option>
+    <option value="Diner">Diner</option>
+	<option value="Japanese Food">Japanese Food</option>
+  </select>
+  <br><br>
+  <input type="submit" value="Submit">
+</form>
+
+
 	
-	<h1> Select up to 3 choices</h1>
-		Pizza   <input type = "checkbox" name = "checkbox1" >
-		Italian <input type = "checkbox" name = "checkbox2" >
-		Chinese <input type = "checkbox" name = "checkbox3" >
-		Japanese <input type = "checkbox" name = "checkbox4" >
-		Indian <input type = "checkbox" name = "checkbox5" >
-		
-	</br>
 	
-		Thai <input type = "checkbox" name = "checkbox6" >
-		American <input type = "checkbox" name = "checkbox7" >
-		Vegan <input type = "checkbox" name = "checkbox8" >
-		Breakfast <input type = "checkbox" name = "checkbox9" >
-		Fast Food <input type = "checkbox" name = "checkbox10" >
-		
-	</br>
+
+<?php
+
+$conn = mysqli_connect("db.soic.indiana.edu", "i494f21_team51", "my+sql=i494f21_team51", "i494f21_team51");
+
+$sql= "SELECT * FROM restaurants INNER JOIN Category ON restaurants.categoryID=Category.categoryID";
+$result= mysqli_query($conn,$sql)
+
+?>
+
+
+
+<table>
+	<tr>
+		<th>Restaurant Name</th>
+		<th>Address</th>
+		<th>Phone Number</th>
+		<th>Pictures</th>
+	</tr>
+	<?php
+	if(mysqli_num_rows($result) > 0)
+	{
+		while($row = mysqli_fetch_array($result))
+		{
+	?>
+	<tr> 
+		<td><?php echo $row["RestaurantName"];?></td>
+		<td><?php echo $row["Street"] . " " .$row["City"] . " " .$row["State"] . " " .$row["Zip"];?></td>
+		<td><?php echo $row["PhoneNum"];?></td>
+		<td><a href="<?php echo $row["Pictures"];?>"><?php echo $row["Pictures"];?></a></td>
+	</tr>
+	<?php
+		}
+	}
+	?>
 	
-		Lunch <input type = "checkbox" name = "checkbox11" >
-		Cheap <input type = "checkbox" name = "checkbox12" >
-		Expensive <input type = "checkbox" name = "checkbox13" >
-		Bar Food <input type = "checkbox" name = "checkbox14" >
-		Winery <input type = "checkbox" name = "checkbox15" >
-	</br>
-	</br>
-	</div>
-
-	<div class="float-container">
-		<div class="float-child1">
-			<h2>How far are you willing to travel?</h2>
-			</br>
-			</br>
-			<div class="slidecontainer">
-				<input type="range" min="0" max="10" value="5" class="slider" id="myRange">
-				<p>Miles: <span id="demo"></span></p>
-			</div>
-
-<script>
-  function signOut() {
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-      console.log('User signed out.');
-    }).then(function(){
-      window.location.href="../Login/login.html"
-    });
-  }
-
-  function onLoad() {
-      gapi.load('auth2', function() {
-        gapi.auth2.init();
-      });
-    }
-var slider = document.getElementById("myRange");
-var output = document.getElementById("demo");
-output.innerHTML = slider.value;
-
-slider.oninput = function() {
-  output.innerHTML = this.value;
-}
-
-</script>
-<script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
-		</div>
-	
-		<div class="float-child2">
-			<h2>You should dine at</h2>
-</br>			
-
-			<form method="POST" action="restaurant.php">
-            <input type="submit" value = "Generate a Restaurant" class="button">
-            </form>
+</table>
+<br>
 
 
-		</div>
-	</div>
-
-
-
-      <footer class="footer-bg d-flex align-items-center position-fixed bottom-0 justify-content-end w-100 p-2">
+	        <footer class="footer-bg d-flex align-items-center position-fixed bottom-0 justify-content-end w-100 p-2">
         <div class="mt-3 d-flex">
             <a href="" class="me-3 footer-link">Rewards</a>
             <a href="../Contact/contact.php" class="me-3 footer-link">Contact</a>
@@ -154,9 +138,9 @@ slider.oninput = function() {
       </footer>
 
 
-     <!-- <script src="../Login/login.js"></script> 
-     <script src="../Restaurant/restaurant.js"></script>  -->
-     <script src="https://apis.google.com/js/platform.js" async defer></script> 
+    
+    <script src="login.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <!--adding bootstrap and jQuery extentions-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
