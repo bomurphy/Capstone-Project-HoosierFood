@@ -53,12 +53,24 @@
 
       <section class="container user-content">
           <div class="row title">Profile Information</div>
-          <div class="row">
+            <div class="row">
               <div class="user-name">Name: <span class="name"></span></div>
+            </div>
+            <div class="row">
+              <div class="user-email" name='user-email'>Email: <span class="email"></span></div>
+              <div class="info-container hide">
+                <div class="row">
+                  <div class="user-name">Street: <span class="street"></span></div>
+                </div>
+                <div class="row">
+                  <div class="user-email" name='state'>City: <span class="city"></span></div>
+                  <div class="row">
+                    <div class="user-name">State: <span class="state"></span></div>
+                  </div>
+                  <div class="row">
+                    <div class="user-email" name=''>State: <span class="zip"></span></div>
+              </div>
           </div>
-          <div class="row">
-            <div class="user-email" name='user-email'>Email: <span class="email"></span></div>
-        </div>
 
         <div class="form-container mt-3">
           <form action="updateUser.php" method='post' class="d-flex flex-column">
@@ -83,7 +95,7 @@
               <input type="number" placeholder="55555" maxlength="5" name="zip" class="red-text" />
             </div>
 
-            <button type="submit" class="p-1">Update Profile</button>
+            <button type="submit" id="updateBtn" class="p-1">Update Profile</button>
 
           </form>
 
