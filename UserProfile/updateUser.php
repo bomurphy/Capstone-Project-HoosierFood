@@ -10,7 +10,7 @@ if (!$connect) {
     $zip = mysqli_real_escape_string($connect, $_POST['zip']);
     $state = mysqli_real_escape_string($connect, $_POST['state']);
 
-    $sql = "UPDATE users (Street, City, State, Zip) VALUES ('$street', '$city', '$zip', '$state')";
+    $sql = "UPDATE users (Street, City, State, Zip) VALUES ('$street', '$city', '$state', '$zip')";
 
     if (mysqli_query($connect, $sql)) 
         {echo '1 record added';}
