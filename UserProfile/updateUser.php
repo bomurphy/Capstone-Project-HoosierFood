@@ -18,15 +18,23 @@ if (!$connect) {
     $state = mysqli_real_escape_string($connect, $_POST['state']);
     $email = $_SESSION['useremail'];
 
-    $_SESSION["userstreet"] = $street;
-    $_SESSION["usercity"] = $city;
-    $_SESSION["userstate"] = $state;
-    $_SESSION["userzip"] = $zip;
+
 
     $sql = "UPDATE users SET Street='$street', City='$city', State='$state', Zip='$zip' WHERE Email='$email'";
 
     if (mysqli_query($connect, $sql)) 
-        {echo '1 record added';}
+        {echo '1 record added';
+        echo '<html>';
+        echo "<script>
+        function myFunction() {
+            window.location.href = 'https://cgi.luddy.indiana.edu/~team51/UserProfile/user-profile.html'
+        }
+
+        setTimeout(myFunction, 2500);
+        
+        </script>"
+        ;}
+        
     else 
         {die('sql error: ' . mysqli_error($connect));}
 
