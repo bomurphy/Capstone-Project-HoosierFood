@@ -135,7 +135,7 @@ function filterTable($query)
             </table>
         </form>
 
-        <footer class="footer-bg d-flex align-items-center position-fixed bottom-0 justify-content-end w-100 p-2">
+        <footer class="footer-bg d-flex align-items-center position-relative bottom-0 justify-content-end w-100 p-2">
         <div class="mt-3 d-flex">
             <a href="" class="me-3 footer-link">Rewards</a>
             <a href="../Contact/contact.php" class="me-3 footer-link">Contact</a>
