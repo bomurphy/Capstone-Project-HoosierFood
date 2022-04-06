@@ -30,8 +30,7 @@ if (!$connect) {
             window.location.href = 'https://cgi.luddy.indiana.edu/~team51/UserProfile/user-profile.html'
         }
 
-        setTimeout(myFunction, 2500);
-        
+        setTimeout(myFunction, 2500)
         </script>"
         ;}
         
