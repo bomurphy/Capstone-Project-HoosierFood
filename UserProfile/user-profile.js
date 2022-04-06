@@ -24,5 +24,7 @@ else {
 
 
 
+
+
 signOutBtn.addEventListener('click', googleSignOut)
 
