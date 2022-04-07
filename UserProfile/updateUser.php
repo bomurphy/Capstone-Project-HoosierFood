@@ -21,14 +21,14 @@ if (!$connect) {
 
 
     $sql = "UPDATE users SET Street='$street', City='$city', State='$state', Zip='$zip' WHERE Email='$email'";
-    echo $sql;
+    
 
     if (mysqli_query($connect, $sql)) 
         {echo '1 record added, Redirecting back to profile...';
         echo '<html>';
         echo "<script>
         function myFunction() {
-            
+            window.location.href = 'https://cgi.luddy.indiana.edu/~team51/UserProfile/user-profile.html'
         }
 
         setTimeout(myFunction, 2500)
