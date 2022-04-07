@@ -18,6 +18,7 @@
             $email = $payload['email'];
             $firstname = $payload['given_name'];
             $lastname=$payload['family_name'];
+            $_SESSION['user-email']=$email;
             //$requestData = file_get_contents("php://input");
             //var_dump($requestData);
     
