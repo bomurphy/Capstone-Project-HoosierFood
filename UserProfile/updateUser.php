@@ -16,7 +16,7 @@ if (!$connect) {
     $city = mysqli_real_escape_string($connect, $_POST['city']);
     $zip = mysqli_real_escape_string($connect, $_POST['zip']);
     $state = mysqli_real_escape_string($connect, $_POST['state']);
-    $email = $_SESSION['useremail'];
+    $email = $_SESSION['user-email'];
 
 
 
