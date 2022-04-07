@@ -28,7 +28,7 @@ if (!$connect) {
         echo '<html>';
         echo "<script>
         function myFunction() {
-            window.location.href = 'https://cgi.luddy.indiana.edu/~team51/UserProfile/user-profile.html'
+            window.location.href = ''
         }
 
         setTimeout(myFunction, 2500)
