@@ -28,7 +28,7 @@ if (!$connect) {
         echo '<html>';
         echo "<script>
         function myFunction() {
-            window.location.href = ''
+            
         }
 
         setTimeout(myFunction, 2500)
