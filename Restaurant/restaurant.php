@@ -1,4 +1,15 @@
-<!DOCTYPE html>
+<?php
+session_start();
+
+var_dump($_SESSION);
+
+$_SESSION['loads'] = 0;
+
+
+return;
+
+
+?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -125,7 +136,6 @@ slider.oninput = function() {
 			<h2>You should dine at</h2>
 			
 <?php
-session_start();
 $con = mysqli_connect("db.soic.indiana.edu", "i494f21_team51", "my+sql=i494f21_team51", "i494f21_team51");
 
 if (!$con) {
@@ -152,7 +162,12 @@ if (mysqli_num_rows($result) > 0) {
 }
 
 
-mysqli_close($con)
+mysqli_close($con);
+
+
+echo "SESSION: ";
+var_dump($_SESSION);
+echo "<br>";
 
 ?>
 			
