@@ -88,34 +88,12 @@ $query = "INSERT INTO orders(restaurantID, Email)
 	}
 }
 else{
-	echo "nothing submitted";
+	echo "You haven't eaten anywhere yet!";
 }
-//Select Query to get List of Restaurants visited
-
-
-
 
 mysqli_close($con)
 
 ?>
-	  
-  
-	  
-	  <p> Hello </p>
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
 	  
 	  
 	  
