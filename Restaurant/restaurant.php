@@ -136,7 +136,7 @@ if (!$con) {
 	echo"";
 }
 
-$sql = "SELECT RestaurantName FROM restaurants
+$sql = "SELECT RestaurantName, restaurantID FROM restaurants
 		ORDER BY RAND()
 		LIMIT 1";
 		
