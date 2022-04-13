@@ -147,6 +147,7 @@ if (mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) {
         echo "" . $row["RestaurantName"];
 		$_SESSION['ChosenRestaurant']=$row['RestaurantName'];
+		$_SESSION['restaurantID']=$row['restaurantID'];
     }
 } else {
     echo "0 results";
