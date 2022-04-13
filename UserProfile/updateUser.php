@@ -19,7 +19,7 @@ if (!$connect) {
     $email = $_SESSION['user-email'];
 
 
-
+ //adding users adress into users table 
     $sql = "UPDATE users SET Street='$street', City='$city', State='$state', Zip='$zip' WHERE Email='$email'";
     
 
