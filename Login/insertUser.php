@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require_once './google-api/vendor/autoload.php';
     
     $connect = mysqli_connect("db.sice.indiana.edu", "i494f21_team51", "my+sql=i494f21_team51", "i494f21_team51");
@@ -18,6 +19,7 @@
             $email = $payload['email'];
             $firstname = $payload['given_name'];
             $lastname=$payload['family_name'];
+            $_SESSION['user-email']=$email;
             //$requestData = file_get_contents("php://input");
             //var_dump($requestData);
     

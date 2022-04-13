@@ -16,14 +16,15 @@ if (!$connect) {
     $city = mysqli_real_escape_string($connect, $_POST['city']);
     $zip = mysqli_real_escape_string($connect, $_POST['zip']);
     $state = mysqli_real_escape_string($connect, $_POST['state']);
-    $email = $_SESSION['useremail'];
+    $email = $_SESSION['user-email'];
 
 
 
     $sql = "UPDATE users SET Street='$street', City='$city', State='$state', Zip='$zip' WHERE Email='$email'";
+    
 
     if (mysqli_query($connect, $sql)) 
-        {echo '1 record added';
+        {echo '1 record added, Redirecting back to profile...';
         echo '<html>';
         echo "<script>
         function myFunction() {
