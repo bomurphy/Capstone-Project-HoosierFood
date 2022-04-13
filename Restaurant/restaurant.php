@@ -114,8 +114,8 @@ slider.oninput = function() {
 	
 		<div class="float-child2">
 			<h2>You should dine at</h2>
-			<?php
-
+<?php
+session_start();
 $con = mysqli_connect("db.soic.indiana.edu", "i494f21_team51", "my+sql=i494f21_team51", "i494f21_team51");
 
 if (!$con) {
@@ -128,12 +128,14 @@ if (!$con) {
 $sql = "SELECT RestaurantName FROM restaurants
 		ORDER BY RAND()
 		LIMIT 1";
+		
 $result = mysqli_query($con, $sql);
 
 if (mysqli_num_rows($result) > 0) {
     // output data of each row
     while($row = mysqli_fetch_assoc($result)) {
         echo "" . $row["RestaurantName"];
+		$_SESSION['ChosenRestaurant']=$row['RestaurantName'];
     }
 } else {
     echo "0 results";
@@ -150,7 +152,7 @@ mysqli_close($con)
 		
 
 			<form method="POST" action="../Orders/orders.php">
-            <input type="submit" value = "Eat Here!" class="button">
+            <input type="submit" value = "Eat Here!"  name="eat" class="button">
             </form>
 		</div>
 	</div>

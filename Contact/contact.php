@@ -89,7 +89,7 @@
 	</div>
 	<div class="elem-group">
 		<label for="title">Reason For Contacting Us</label>
-		<input type="text" id="title" name="email_title" placeholder="Unable to Reset my Password">
+		<input type="text" id="title" name="email_title" placeholder="Unable to Login">
 	</div>
 	<div class="elem-group">
 		<label for="message">Write your message</label>

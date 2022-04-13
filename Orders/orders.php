@@ -63,11 +63,33 @@
         </div>
       </nav>
 	  
+<?php
+session_start();
+	  $con = mysqli_connect("db.soic.indiana.edu", "i494f21_team51", "my+sql=i494f21_team51", "i494f21_team51");
+
+if (!$con) {
+	die("Failed to connect: " .
+		mysqli_connect_error() );
+} else{
+	echo"";
+}
+
+if(isset($_POST['eat'])){
+	//Insert the Restaurant, User email in the database,
+	
+}
+//Select Query to get List of Restaurants visited
+
+
+
+
+mysqli_close($con)
+
+?>
 	  
+  
 	  
-	  
-	  
-	  
+	  <p> Hello </p>
 	  
 	  
 	  
