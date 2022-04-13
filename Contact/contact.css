@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+.data {
+    display: none;
+}
+/*centering Google Login button in the center of the screen*/
+/* .g-signin2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+} */
+
+.nav-background {
+    background-color: beige;
+}
+
+.hero-section {
+    margin-top: 10rem;
+}
+
+.iu-logo {
+    height: 60px;
+    width: 50px;
+}
+
+.title-text {
+    font-size: 3rem;
+}
+
+.red-text {
+    color: #990000;
+}
+
+.footer-bg {
+    background-color: #990000;
+    height: 2rem;
+    color: white;
+}
+
+
+.login {
+    background-color: transparent;
+    border: solid #990000 2px;
+    padding: 5px;
+    text-align: center;
+    font-weight: bold;
+    color: #990000;
+    height: 40px;
+    width: 100px;
+}
+
+.login:hover {
+    background-color: #990000;
+    color: white;
+    transition-duration: 500ms;
+}
+
+.nav-link:hover {
+    color: black;
+}
+
+.footer-link {
+    color: beige;
+    text-decoration: none;
+    margin-bottom: 1rem;
+}
+
+.footer-link:hover {
+    color: black;
+}
+
+.hide {
+    display: none;
+}
+
+.user-icon-img {
+    width: 100%;
+    border-radius: 25px;
+}
+
+.user {
+    cursor: pointer;
+    border-radius: 25px;
+    height: 50px;
+    width: 50px;
+    margin-right: 1rem;
+    margin-top: -.25rem;
+}
+
+.signOutBtn {
+    text-decoration: none;
+}
+
+div.elem-group {
+  margin: 30px;
+}
+
+label {
+  display: block;
+  font-family: 'Aleo';
+  padding-bottom: 4px;
+  font-size: 1.25em;
+}
+
+input, select, textarea {
+  border-radius: 2px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size: 1.25em;
+  font-family: 'Aleo';
+  width: 500px;
+  padding: 8px;
+}
+
+textarea {
+  height: 150px;
+}
+
+button {
+  height: 50px;
+  background: green;
+  color: white;
+  border: 2px solid darkgreen;
+  font-size: 1.25em;
+  font-family: 'Aleo';
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  border: 2px solid black;
+}
+
+
+.button {
+  background-color: #FFFDD0;
+  border: 2px solid black;
+  color: #990000;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}

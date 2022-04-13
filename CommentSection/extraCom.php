@@ -8,8 +8,8 @@
         content="1027531663911-al3p7o7qrb5eqdpq6j3ea1mn63tvg5jc.apps.googleusercontent.com">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="orders.css" >
-    <title>Orders</title>
+    <link rel="stylesheet" href="extraCom.css" >
+    <title>Comments</title>
     
 </head>
 <body class="nav-background">
@@ -58,31 +58,74 @@
             </form>
           </div>
         </div>
-      </nav>
+      
+	  </nav>
+<div class="LD">
+<h1> Likes & Dislikes </h1>
+</div>
 	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	        <footer class="footer-bg d-flex align-items-center position-fixed bottom-0 justify-content-end w-100 p-2">
+<form action="extraCom.php" method="post"> 
+	<p> 
+    	<label for="Comment">Share Comment:</label> <br>
+        <input type="text" name="user_comment" id="UserComment"> 
+    </p> 
+ 
+    <input type="submit" value="Submit"> 
+</form> 
+<br>
+
+<?php 
+$conn = mysqli_connect("db.soic.indiana.edu", "i494f21_team51", "my+sql=i494f21_team51", "i494f21_team51"); 
+  
+// Check connection 
+if($conn === false){ 
+    die("ERROR: Could not connect. " . mysqli_connect_error()); 
+} 
+  
+  
+$user_comment = mysqli_real_escape_string($conn, $_REQUEST['user_comment']); 
+
+  
+// insert query execution 
+$sql = "INSERT INTO Comments (comment) VALUES ('$user_comment')"; 
+if(mysqli_query($conn, $sql)){ 
+    echo "Thank You for sharing!"; 
+} else{ 
+    echo "ERROR: Could not execute $sql. " . mysqli_error($conn); 
+} 
+  
+// close connection 
+mysqli_close($conn); 
+?> 
+<br>
+<br>
+	
+		<?php
+
+		// Create connection
+		$conn = mysqli_connect("db.soic.indiana.edu", "i494f21_team51", "my+sql=i494f21_team51", "i494f21_team51");
+
+		$sql = "SELECT comment FROM Comments WHERE comment IS NOT NULL";
+		//$sql= "SELECT * FROM Comments INNER JOIN users ON Comments.userID=users.userID";
+		$result = mysqli_query($conn, $sql);
+		
+		if (mysqli_num_rows($result) > 0) {
+		  echo"<table border='1'>";
+		  echo"<tr><th>Community Comments</th></tr>\n";
+		  while($row = mysqli_fetch_assoc($result)) {
+			echo"<tr><td>{$row['comment']}</td></tr>\n";
+		  }
+		  echo"</table>";
+		} else {
+		  echo "No Comments";
+		}
+		
+		mysqli_close($conn);
+		?>
+		<br>
+		<br>
+
+<footer class="footer-bg d-flex align-items-center position-fixed bottom-0 justify-content-end w-100 p-2">
         <div class="mt-3 d-flex">
             <a href="" class="me-3 footer-link">Rewards</a>
             <a href="../Contact/contact.php" class="me-3 footer-link">Contact</a>

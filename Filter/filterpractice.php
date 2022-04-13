@@ -8,8 +8,8 @@
         content="1027531663911-al3p7o7qrb5eqdpq6j3ea1mn63tvg5jc.apps.googleusercontent.com">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="orders.css" >
-    <title>Orders</title>
+    <link rel="stylesheet" href="filter.css" >
+    <title>FilterPage</title>
     
 </head>
 <body class="nav-background">
@@ -32,7 +32,7 @@
                 <a class="nav-link red-text" href="#" tabindex="-1" aria-disabled="true">Reviews</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link red-text" href="../Filter/filter.php" tabindex="-1" aria-disabled="true">Discovery</a>
+                <a class="nav-link red-text" href="../Filter/filterpractice.php" tabindex="-1" aria-disabled="true">Discovery</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link red-text" href="../Menu/menu.php" tabindex="-1" aria-disabled="true">Menus</a>  
@@ -59,29 +59,76 @@
           </div>
         </div>
       </nav>
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
+
+
+<h1> Choose Food Types </h1>
+
+
+<form action="filterpractice.php">
+  <label for="categories">Choose a Food Type:</label>
+  <select name="category" id="FoodCategories">
+    <option value="Pizza">Pizza</option>
+    <option value="Wings">Wings</option>
+    <option value="Fast Food">Fast Food</option>
+    <option value="Bar & Grill">Bar & Grill</option>
+	<option value="Mexican Food">Mexican Food</option>
+    <option value="Indian Food">Indian Food</option>
+    <option value="Chinese Food">Chinese Food</option>
+    <option value="Sweets">Sweets</option>
+	<option value="Breakfast/Brunch">Breakfast/Brunch</option>
+	<option value="Thai Food">Thai Food</option>
+    <option value="Italian">Italian</option>
+    <option value="sandwiches">sandwiches</option>
+    <option value="Diner">Diner</option>
+	<option value="Japanese Food">Japanese Food</option>
+  </select>
+  <br><br>
+  <input type="submit" value="Submit">
+</form>
+
+
+	
+	
+
+<?php
+
+$conn = mysqli_connect("db.soic.indiana.edu", "i494f21_team51", "my+sql=i494f21_team51", "i494f21_team51");
+
+$sql= "SELECT * FROM restaurants INNER JOIN Category ON restaurants.categoryID=Category.categoryID";
+$result= mysqli_query($conn,$sql)
+
+?>
+
+
+
+<table>
+	<tr>
+		<th>Restaurant Name</th>
+		<th>Address</th>
+		<th>Phone Number</th>
+		<th>Pictures</th>
+	</tr>
+	<?php
+	if(mysqli_num_rows($result) > 0)
+	{
+		while($row = mysqli_fetch_array($result))
+		{
+	?>
+	<tr> 
+		<td><?php echo $row["RestaurantName"];?></td>
+		<td><?php echo $row["Street"] . " " .$row["City"] . " " .$row["State"] . " " .$row["Zip"];?></td>
+		<td><?php echo $row["PhoneNum"];?></td>
+		<td><a href="<?php echo $row["Pictures"];?>"><?php echo $row["Pictures"];?></a></td>
+	</tr>
+	<?php
+		}
+	}
+	?>
+	
+</table>
+<br>
+
+
 	        <footer class="footer-bg d-flex align-items-center position-fixed bottom-0 justify-content-end w-100 p-2">
         <div class="mt-3 d-flex">
             <a href="" class="me-3 footer-link">Rewards</a>
