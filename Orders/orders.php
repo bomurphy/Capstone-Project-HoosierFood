@@ -78,7 +78,15 @@ $Email = $_SESSION["user-email"];
 $query = "INSERT INTO orders(restaurantID, Email)
 				VALUES('$rid','$Email');";
 	echo "$query";
-
+	$result = mysqli_query($con, $query);
+	
+	
+	$query = "SELECT * FROM orders JOIN restaurants on restaurants.restaurantID = orders.restaurantID WHERE Email = '$Email';";
+	$result = mysqli_query($con, $query);
+	while($row = mysqli_fetch_assoc($result)) {
+		echo $row["RestaurantName"];
+		echo "<br>";
+	}
 }
 else{
 	echo "nothing submitted";
