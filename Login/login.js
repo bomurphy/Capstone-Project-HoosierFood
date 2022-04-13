@@ -28,19 +28,19 @@ function onSignIn(googleUser) {
 
 // set profile to object
 // JSON Parse session to get data and pass the data
-let userIcon = `<img class="user-icon-img"  src='${sessionStorage.getItem('userimage')}' alt='user_img' />        `;        
+//let userIcon = `<img class="user-icon-img"  src='${sessionStorage.getItem('userimage')}' alt='user_img' />        `;        
 
     if  (profile != "" || profile != undefined || profile != null) {  
-        window.location.href = 'https://cgi.luddy.indiana.edu/~team51/Restaurant/restaurant.html'
-        // let loginBtn = document.querySelector('#login-btn')        
-        // let registerBtn = document.querySelector('#register-btn')        
-        let user = document.querySelector('.user');
+        //  window.location.href = 'https://cgi.luddy.indiana.edu/~team51/Restaurant/restaurant.html'
+        //  let loginBtn = document.querySelector('#login-btn')        
+        //  let registerBtn = document.querySelector('#register-btn')        
+        //  let user = document.querySelector('.user');
 
-        sessionStorage.setItem('username', `${userName}`);
-        sessionStorage.setItem('useremail', `${userEmail}`);
-        sessionStorage.setItem('userimage', `${userImg}`);
+        // sessionStorage.setItem('username', `${userName}`);
+        // sessionStorage.setItem('useremail', `${userEmail}`);
+        // sessionStorage.setItem('userimage', `${userImg}`);
 
-        const jsonProfile = JSON.stringify(sendProfile)
+        //const jsonProfile = JSON.stringify(sendProfile)
         
 
         var xhr = new XMLHttpRequest();
@@ -48,8 +48,19 @@ let userIcon = `<img class="user-icon-img"  src='${sessionStorage.getItem('useri
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.onload = function() {
             console.log('Signed in as: ' + xhr.responseText);
+            window.location.href = 'https://cgi.luddy.indiana.edu/~team51/Restaurant/restaurant.html'
+         
+            let loginBtn = document.querySelector('#login-btn')        
+         let registerBtn = document.querySelector('#register-btn')        
+         let user = document.querySelector('.user');
+
+        sessionStorage.setItem('username', `${userName}`);
+        sessionStorage.setItem('useremail', `${userEmail}`);
+        sessionStorage.setItem('userimage', `${userImg}`);
+
         };
-        xhr.send('idtoken=' + id_token, jsonProfile);
+        //xhr.send('idtoken=' + id_token, jsonProfile);
+        xhr.send('idtoken=' + id_token);
 
 
         

@@ -38,6 +38,9 @@
                 <a class="nav-link red-text" href="../Menu/menu.php" tabindex="-1" aria-disabled="true">Menus</a>  
               </li>
               <li class="nav-item">
+                <a class="nav-link red-text" href="../Favorites/fav.php" tabindex="-1" aria-disabled="true">Favorites</a>  
+              </li>
+              <li class="nav-item">
                 <a class="nav-link red-text" href="#" tabindex="-1" aria-disabled="true">Support</a>
               </li>
             </ul>
@@ -56,7 +59,7 @@
                 
                 <a href="https://cgi.luddy.indiana.edu/~team51/Register/register.php" id="register-btn" class="login">Register</button></a>
                 <button class="signOutBtn login hide">Sign Out</button>--> 
-                <a href="#" onclick="signOut();"><button class="login signOutBtn">Sign Out</button></a>
+                <!-- <a href="#" onclick="signOut();"><button class="login signOutBtn">Sign Out</button></a> -->
             </form> 
           </div>
         </div>
@@ -86,7 +89,7 @@
 	</div>
 	<div class="elem-group">
 		<label for="title">Reason For Contacting Us</label>
-		<input type="text" id="title" name="email_title" placeholder="Unable to Reset my Password">
+		<input type="text" id="title" name="email_title" placeholder="Unable to Login">
 	</div>
 	<div class="elem-group">
 		<label for="message">Write your message</label>

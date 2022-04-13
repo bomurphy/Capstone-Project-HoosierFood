@@ -39,6 +39,12 @@
                 <a class="nav-link red-text" href="../Menu/menu.php" tabindex="-1" aria-disabled="true">Menus</a>  
               </li>
               <li class="nav-item">
+<<<<<<< HEAD
+=======
+                <a class="nav-link red-text" href="../Favorites/fav.php" tabindex="-1" aria-disabled="true">Favorites</a>  
+              </li>
+              <li class="nav-item">
+>>>>>>> ddee86390ca410f0a658f64bd1d8a82cad555787
                 <a class="nav-link red-text" href="#" tabindex="-1" aria-disabled="true">Support</a>
               </li>
             </ul>
