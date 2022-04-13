@@ -74,7 +74,7 @@ if(isset($_POST['eat'])){
 	//Insert the Restaurant, User email in the database,
 	echo "Session $_SESSION[ChosenRestaurant]";
 $rid = $_SESSION["restaurantID"];
-$Email = $_SESSION["Email"];
+$Email = $_SESSION["user-email"];
 $query = "INSERT INTO orders(restaurantID, Email)
 				VALUES('$rid','$Email');";
 	echo "$query";
