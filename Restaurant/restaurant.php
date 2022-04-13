@@ -1,14 +1,5 @@
 <?php
-session_start();
-
-var_dump($_SESSION);
-
-$_SESSION['loads'] = 0;
-
-
-return;
-
-
+	session_start();
 ?><!DOCTYPE html>
 <html lang="en">
 <head>

@@ -1,12 +1,5 @@
 <?php
-session_start();
-
-echo "SESSION: ";
-var_dump($_SESSION);
-echo "<br>";
-
-
-return;
+	session_start();
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
