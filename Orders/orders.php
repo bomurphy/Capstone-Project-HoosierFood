@@ -46,7 +46,7 @@
               </a>
           </form>
 
-                <a href="#" onclick="signOut();"><button class="login signOutBtn">Sign Out</button></a>
+                <a href="../Restaurant/restaurant.html" onclick="signOut();"><button class="login signOutBtn">Home</button></a>
             </form> 
             
           
