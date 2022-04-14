@@ -14,7 +14,7 @@
 </head>
 <body class="nav-background">
     
-    <nav class="navbar navbar-expand-lg p-2 border-bottom nav-background">
+   <nav class="navbar navbar-expand-lg p-2 border-bottom nav-background">
         <div class="container-fluid">
           <img src="../photos/iu-logo.svg" class="iu-logo me-5" alt="">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
