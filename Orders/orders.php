@@ -77,7 +77,7 @@ $query = "INSERT INTO orders(restaurantID, Email)
 	$result = mysqli_query($con, $query);
 	
 	
-	$query = "SELECT * FROM orders JOIN restaurants on restaurants.restaurantID = orders.restaurantID WHERE Email = '$Email';";
+	$query = "SELECT * FROM orders JOIN restaurants on restaurants.restaurantID = orders.restaurantID WHERE Email = '$Email' ORDER BY asc;";
 	$result = mysqli_query($con, $query);
 	while($row = mysqli_fetch_assoc($result)) {
 		echo $row["RestaurantName"];
