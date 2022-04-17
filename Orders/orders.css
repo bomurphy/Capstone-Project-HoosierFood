@@ -105,10 +105,10 @@ h1{
 	padding: 10px;
 	color: #FFFDD0;
 	font-size: 17px;
-    width: 50%;
+    width: 100%;
     float: left;
     padding: 20px;
     border: 2px solid black;
 	text-align: center;
-	height: 300px;
+	height: 100%;
 }  
