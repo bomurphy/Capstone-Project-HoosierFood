@@ -41,7 +41,7 @@ th {
 }
 
 td {
-        background-color: #990000;
+    background-color: #990000 !important;
     color: beige;
     text-shadow: 0 0 black;
     padding-block: 10px;
