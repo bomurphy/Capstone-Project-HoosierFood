@@ -82,11 +82,12 @@
 
 .user {
     cursor: pointer;
-    border-radius: 25px;
-    height: 50px;
-    width: 50px;
+	border-radius: 25px;
+	height: 50px;
+	width: 50px;
     margin-right: 1rem;
-    margin-top: -.25rem;
+	margin-top: -.25rem;
+	padding-top: 6px;
 }
 
 .signOutBtn {
@@ -99,7 +100,7 @@ div.elem-group {
 
 label {
   display: block;
-  font-family: 'Aleo';
+  /* font-family: 'Aleo'; */
   padding-bottom: 4px;
   font-size: 1.25em;
 }
@@ -109,7 +110,7 @@ input, select, textarea {
   border: 1px solid #ccc;
   box-sizing: border-box;
   font-size: 1.25em;
-  font-family: 'Aleo';
+  /* font-family: 'Aleo'; */
   width: 500px;
   padding: 8px;
 }
@@ -124,7 +125,7 @@ button {
   color: white;
   border: 2px solid darkgreen;
   font-size: 1.25em;
-  font-family: 'Aleo';
+  /* font-family: 'Aleo'; */
   border-radius: 4px;
   cursor: pointer;
 }

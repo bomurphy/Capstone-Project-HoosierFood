@@ -82,11 +82,12 @@
 
 .user {
     cursor: pointer;
-    border-radius: 25px;
-    height: 50px;
-    width: 50px;
+	border-radius: 25px;
+	height: 50px;
+	width: 50px;
     margin-right: 1rem;
-    margin-top: -.25rem;
+	margin-top: -.25rem;
+	padding-top: 6px;
 }
 
 .signOutBtn {
