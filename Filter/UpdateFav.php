@@ -7,19 +7,19 @@ if(isset($_POST['save_multicheckbox']))
     $Restlist = $_POST['Restlist'];
     foreach($Restlist as $restitems)
     {
-        $query = "INSERT INTO FavRestaurant (restName), (userID) VALUES ('$restitems'), ('userID')";
+        $query = "INSERT INTO FavRestaurant (restName) VALUES ('$restitems')";
         $query_run = mysqli_query($con, $query);
     }
 
     if($query_run)
     {
         $_SESSION['status'] = "Favorites Added";
-        header("Location: practice.php");
+        header("Location: testing.php");
     }
     else
     {
         $_SESSION['status'] = "Restaurant(s) already Selected";
-        header("Location: practice.php");
+        header("Location: testing.php");
     }
 }
-?>
+?> 
