@@ -44,19 +44,19 @@
               </a>
           </form>
 
-              <a href="../Restaurant/restaurant.html" onclick="signOut();"><button class="login signOutBtn">Home</button></a>
+                <a href="#" onclick="signOut();"><button class="login signOutBtn">Sign Out</button></a>
             </form> 
           </div>
         </div>
       
 	  </nav>
 <div class="LD">
-<h1> Likes & Dislikes </h1>
+<h1> Reviews & Recommendations </h1>
 </div>
 	  
 <form action="extraCom.php" method="post"> 
 	<p> 
-    	<label for="Comment">Share Comment:</label> <br>
+    	<label for="Comment">Please share any Recommendations or Reviews:</label> <br>
         <input type="text" name="user_comment" id="UserComment"> 
     </p> 
  
@@ -67,17 +67,12 @@
 <?php 
 $conn = mysqli_connect("db.soic.indiana.edu", "i494f21_team51", "my+sql=i494f21_team51", "i494f21_team51"); 
   
-// Check connection 
-if($conn === false){ 
-    die("ERROR: Could not connect. " . mysqli_connect_error()); 
-} 
-  
   
 $user_comment = mysqli_real_escape_string($conn, $_REQUEST['user_comment']); 
 
   
-// insert query execution 
-$sql = "INSERT INTO Comments (comment) VALUES ('$user_comment')"; 
+// insert query  
+$sql = "INSERT INTO Reviews (comment) VALUES ('$user_comment')"; 
 if(mysqli_query($conn, $sql)){ 
     echo "Thank You for sharing!"; 
 } else{ 
@@ -95,25 +90,39 @@ mysqli_close($conn);
 		// Create connection
 		$conn = mysqli_connect("db.soic.indiana.edu", "i494f21_team51", "my+sql=i494f21_team51", "i494f21_team51");
 
-		$sql = "SELECT comment FROM Comments WHERE comment IS NOT NULL";
-		//$sql= "SELECT * FROM Comments INNER JOIN users ON Comments.userID=users.userID";
+		$sql = "SELECT comment FROM Reviews WHERE comment <> ''";
 		$result = mysqli_query($conn, $sql);
+		?>
 		
+<table>
+	<tr>
+		<th>Recommendations</th>
+	</tr>		
+
+		<?php
 		if (mysqli_num_rows($result) > 0) {
-		  echo"<table border='1'>";
-		  echo"<tr><th>Community Comments</th></tr>\n";
+		  
 		  while($row = mysqli_fetch_assoc($result)) {
-			echo"<tr><td>{$row['comment']}</td></tr>\n";
-		  }
-		  echo"</table>";
-		} else {
-		  echo "No Comments";
-		}
+		?>
 		
+		<tr> 
+			<td><?php echo"{$row['comment']}\n";;?></td>
+		</tr>
+		
+		<?php
+		  }
+
+		} 
+		?>
+	
+		<?php
+// close connection	
 		mysqli_close($conn);
 		?>
-		<br>
-		<br>
+</table>
+<br>
+<br>
+
 
 <footer class="footer-bg d-flex align-items-center position-fixed bottom-0 justify-content-end w-100 p-2">
         <div class="mt-3 d-flex">
