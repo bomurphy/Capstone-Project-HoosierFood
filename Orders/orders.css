@@ -92,3 +92,22 @@
 .signOutBtn {
     text-decoration: none;
 }
+
+h1{
+	text-align: center;
+	color: #FFFDD0;
+	
+}
+.float {
+	background-color: #990000;
+	text-align: center;
+	padding: 10px;
+	color: #FFFDD0;
+	font-size: 17px;
+    width: 50%;
+    float: left;
+    padding: 20px;
+    border: 2px solid black;
+	text-align: center;
+	height: 300px;
+}  

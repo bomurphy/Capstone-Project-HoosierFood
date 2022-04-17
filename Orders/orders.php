@@ -55,6 +55,9 @@
         </div>
       </nav>
 	  
+	  <h1 class="red-text">Order History</h1>
+	  <div class = "float">
+	  
 <?php
 
 
@@ -91,6 +94,8 @@ else{
 mysqli_close($con)
 
 ?>
+
+</div>
 	  
 	  
 	  
