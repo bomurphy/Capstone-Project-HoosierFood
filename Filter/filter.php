@@ -30,10 +30,10 @@
                 <a class="nav-link red-text" href="../Orders/orders.php">Orders</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link red-text" href="../CommentSection/extraCom.php" tabindex="-1" aria-disabled="true">Reviews</a>
+                <a class="nav-link red-text" href="#" tabindex="-1" aria-disabled="true">Reviews</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link red-text" href="../Filter/filter.php" tabindex="-1" aria-disabled="true">Discovery</a>
+                <a class="nav-link red-text" href="../Filter/filterpractice.php" tabindex="-1" aria-disabled="true">Discovery</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link red-text" href="../Menu/menu.php" tabindex="-1" aria-disabled="true">Menus</a>  
@@ -44,8 +44,6 @@
                 <svg xmlns="http://www.w3.org/2000/svg" height="42px" viewBox="0 0 24 24" width="42px" fill="#990000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM7.07 18.28c.43-.9 3.05-1.78 4.93-1.78s4.51.88 4.93 1.78C15.57 19.36 13.86 20 12 20s-3.57-.64-4.93-1.72zm11.29-1.45c-1.43-1.74-4.9-2.33-6.36-2.33s-4.93.59-6.36 2.33C4.62 15.49 4 13.82 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8c0 1.82-.62 3.49-1.64 4.83zM12 6c-1.94 0-3.5 1.56-3.5 3.5S10.06 13 12 13s3.5-1.56 3.5-3.5S13.94 6 12 6zm0 5c-.83 0-1.5-.67-1.5-1.5S11.17 8 12 8s1.5.67 1.5 1.5S12.83 11 12 11z"/></svg>
               </a>
           </form>
-
-		  	<a href="../Restaurant/restaurant.html" onclick="signOut();"><button class="login signOutBtn">Home</button></a>
             </form>
           </div>
         </div>
@@ -63,7 +61,7 @@
 		$resultt= mysqli_query($conn,$sqll)
 
 		?>	
-			<form action="filter.php"  method="get">
+			<form action="testing.php"  method="get">
 				<select name="category">
 					<option value="">Choose a Category</option>
 					<?php
@@ -126,39 +124,71 @@ $result= mysqli_query($conn,$sql)
 </table>
 <br>
 
-<?php
+<div class="session">
+                <?php  
+                if(isset($_SESSION['status']))
+                {
+                    echo "<h4>".$_SESSION['status']."</h4>";
+                    unset($_SESSION['status']);
+                }
+                ?>
+                  <div class="card-header">
+                      <h4>Add to your Favorites List</h4>
+                  </div>
+                    <div class="card-body">
+                        <form action="UpdateFav.php" method="POST">
+                        <?php
+                            $con = mysqli_connect("db.soic.indiana.edu", "i494f21_team51", "my+sql=i494f21_team51", "i494f21_team51");
 
-$conn = mysqli_connect("db.soic.indiana.edu", "i494f21_team51", "my+sql=i494f21_team51", "i494f21_team51");
+                            $rest_query = "SELECT * FROM restaurants";
+                            $query_run = mysqli_query($con, $rest_query);
 
+                            if(mysqli_num_rows($query_run) > 0)
+                            {
+                                foreach($query_run as $rest)
+                                {
+                                    ?>
+                                    <input type="checkbox" name="Restlist[]" value="<?= $rest['RestaurantName']; ?>" /> <?= $rest['RestaurantName']; ?> <br/>
+                                    <?php
+                                }
+                            }
+                            else
+                            {
+                                echo "No Record Found";
+                            }
+                        ?>
 
-$sql= "SELECT * FROM restaurants WHERE RestaurantName = 'Buffa Louies'";
-$result= mysqli_query($conn,$sql)
+<h1>Your Favorites</h1>
+	
+		<?php
 
-
-?>
-
-<h3 class = "red-text">Here Are Your Favorite Restaurants</h3>
-<table>
-	<tr>
-		<th>Restaurant Name</th>
-	</tr>
-	<?php
-	if(mysqli_num_rows($result) > 0)
-	{
-		while($row = mysqli_fetch_array($result))
-		{
-	?>
-	<tr>	
-		<td><?php echo $row["RestaurantName"];?></td>
-	</tr>
-	<?php
+		// Create connection
+		$conn = mysqli_connect("db.soic.indiana.edu", "i494f21_team51", "my+sql=i494f21_team51", "i494f21_team51");
+		// Check connection
+		if (!$conn) {
+		  die("Connection failed: " . mysqli_connect_error());
 		}
-	}
-	mysqli_close($conn);?>
-</table>
+		//$sql= "SELECT * FROM FavRestaurants INNER JOIN restaurants ON restaurants.categoryID=Category.categoryID";
+		$sql = "SELECT Favid, restName FROM FavRestaurants";
+		$result = mysqli_query($conn, $sql);
+		//can I echo multiple rows
+		if (mysqli_num_rows($result) > 0) {
+		  // output data of each row
+		  while($row = mysqli_fetch_assoc($result)) {
+			echo "Restaurant Name: " . $row["restName"]. "<br>";
+		  }
+		} else {
+		  echo "0 results";
+		}
+		
+		mysqli_close($conn);
+		?>
+<br>
+<br>
 
 	        <footer class="footer-bg d-flex align-items-center position-fixed bottom-0 justify-content-end w-100 p-2">
         <div class="mt-3 d-flex">
+            <a href="" class="me-3 footer-link">Rewards</a>
             <a href="../Contact/contact.php" class="me-3 footer-link">Contact</a>
         </div>
      
