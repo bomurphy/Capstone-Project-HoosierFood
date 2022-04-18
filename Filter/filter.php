@@ -135,7 +135,7 @@ $result= mysqli_query($conn,$sql)
 
 ?>
 
-<h3>Here Are Your Favorite Restaurants</h3>
+<h3 class = "red-text">Here Are Your Favorite Restaurants</h3>
 <table>
 	<tr>
 		<th>Restaurant Name</th>
