@@ -49,10 +49,7 @@
         </div>
       </nav>
 
-<h1 class="red-text"> Select A Category </h1>
-
-
-	<div class="catNames">
+	<div id="catNames">
 		<?php
 
 		$conn = mysqli_connect("db.soic.indiana.edu", "i494f21_team51", "my+sql=i494f21_team51", "i494f21_team51");
@@ -61,7 +58,7 @@
 		$resultt= mysqli_query($conn,$sqll)
 
 		?>	
-			<form action="filter.php"  method="get">
+			<form action="filter.php" method="get">
 				<select name="category">
 					<option value="">Choose a Category</option>
 					<?php
@@ -111,7 +108,7 @@ $result= mysqli_query($conn,$sql)
 		<td><?php echo $row["Street"] . " " .$row["City"] . " " .$row["State"] . " " .$row["Zip"];?></td>
 		<td><?php echo $row["PhoneNum"];?></td>
 		<td><a href="<?php echo $row["Pictures"];?>"><?php echo $row["Pictures"];?></a></td>
-		<td><form action="UpdateFav.php" method="post">
+		<td><form action="testing.php" method="post">
 				<input type="checkbox" name="saveFavorite" value="1">
 				<button name="save_multicheckbox" class="btn btn-primary">Save Favorite</button>
 			</form></td>
@@ -124,36 +121,86 @@ $result= mysqli_query($conn,$sql)
 </table>
 <br>
 
-<?php
-
-$conn = mysqli_connect("db.soic.indiana.edu", "i494f21_team51", "my+sql=i494f21_team51", "i494f21_team51");
 
 
-$sql= "SELECT * FROM restaurants WHERE RestaurantName = 'Buffa Louies'";
-$result= mysqli_query($conn,$sql)
+
+<div class="session">
+                <?php  
+                if(isset($_SESSION['status']))
+                {
+                    echo "<h4>".$_SESSION['status']."</h4>";
+                    unset($_SESSION['status']);
+                }
+                ?>
+                  <div class="card-header">
+                      <h4>Add to your Favorites List</h4>
+                  </div>
+                    <div class="card-body">
+                        <form action="UpdateFav.php" method="POST">
+                        <?php
+                            $con = mysqli_connect("db.soic.indiana.edu", "i494f21_team51", "my+sql=i494f21_team51", "i494f21_team51");
+
+                            $rest_query = "SELECT RestaurantName FROM restaurants";
+                            $query_run = mysqli_query($con, $rest_query);
+
+                            if(mysqli_num_rows($query_run) > 0)
+                            {
+                                foreach($query_run as $rest)
+                                {
+                                    ?>
+                                    <input type="checkbox" name="Restlist[]" value="<?= $rest['RestaurantName']; ?>" /> <?= $rest['RestaurantName']; ?> <br/>
+                                    <?php
+                                }
+                            }
+                            else
+                            {
+                                echo "No Record Found";
+                            }
+                        ?>
+						<br>
+                            <div class="form-create records">
+                                <button name="save_multicheckbox" class="btn btn-primary">Save Favorites</button>
+                            </div>
+                        </form>
+						<br>
+						<br>
+						<br>
+					</div>
+		</div>
 
 
-?>
 
-<h3>Here Are Your Favorite Restaurants</h3>
-<table>
-	<tr>
-		<th>Restaurant Name</th>
-	</tr>
-	<?php
-	if(mysqli_num_rows($result) > 0)
-	{
-		while($row = mysqli_fetch_array($result))
-		{
-	?>
-	<tr>	
-		<td><?php echo $row["RestaurantName"];?></td>
-	</tr>
-	<?php
+<h1>Your Favorites</h1>
+	
+		<?php
+
+		// Create connection
+		$conn = mysqli_connect("db.soic.indiana.edu", "i494f21_team51", "my+sql=i494f21_team51", "i494f21_team51");
+		// Check connection
+		if (!$conn) {
+		  die("Connection failed: " . mysqli_connect_error());
 		}
-	}
-	mysqli_close($conn);?>
-</table>
+		//$sql= "SELECT * FROM FavRestaurants INNER JOIN restaurants ON restaurants.categoryID=Category.categoryID";
+		$Favsql = "SELECT Favid, restName FROM FavRestaurant";
+		$FavQ = mysqli_query($conn, $Favsql);
+		//can I echo multiple rows
+		if (mysqli_num_rows($FavQ) > 0) {
+		  // output data of each row
+		  while($row = mysqli_fetch_assoc($FavQ)) {
+			echo "Restaurant Name: " . $row["restName"]. "<br>";
+		  }
+		} else {
+		  echo "0 results";
+		}
+		
+		mysqli_close($conn);
+		?>
+<br>
+<br>
+
+
+
+
 
 	        <footer class="footer-bg d-flex align-items-center position-fixed bottom-0 justify-content-end w-100 p-2">
         <div class="mt-3 d-flex">
