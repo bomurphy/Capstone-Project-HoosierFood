@@ -58,7 +58,7 @@
 		$resultt= mysqli_query($conn,$sqll)
 
 		?>	
-			<form action="testing.php" method="get">
+			<form action="filter.php" method="get">
 				<select name="category">
 					<option value="">Choose a Category</option>
 					<?php
