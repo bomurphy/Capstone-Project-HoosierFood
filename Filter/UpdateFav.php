@@ -14,12 +14,12 @@ if(isset($_POST['save_multicheckbox']))
     if($query_run)
     {
         $_SESSION['status'] = "Favorites Added";
-        header("Location: testing.php");
+        header("Location: filter.php");
     }
     else
     {
         $_SESSION['status'] = "Restaurant(s) already Selected";
-        header("Location: testing.php");
+        header("Location: filter.php");
     }
 }
 ?> 
