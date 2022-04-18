@@ -102,6 +102,8 @@ H1
 
 .red-text {
     color: #990000;
+	text-align: center;
+	float: center;
 }
 
 .footer-bg {
